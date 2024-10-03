@@ -1,25 +1,14 @@
-.parent {
+.container {
+   min-width: 300px;
+   min-height: 300px;
    position: relative;
    border: 1px solid black;
-   min-height: 600px;
-   z-index: 10;
 }
-
-.child1 {
+.absolute-box {
    position: absolute;
-   min-width: 300px;
-   min-height: 300px;
+   width: 100px;
+   height: 100px;
+   left: 40px;
+   top: 30px;
    background-color: red;
-   z-index: 0;
-   left: 50px;
-   top: 50px;
-}
-.child2 {
-   position: absolute;
-   min-width: 300px;
-   min-height: 300px;
-   background-color: green;
-   z-index: 1;
-   left: 100px;
-   top: 100px;
 }
