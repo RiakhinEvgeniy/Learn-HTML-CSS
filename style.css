@@ -1,4 +1,6 @@
  .static-box {
-    background-color: #3498db;
-
+   background-color: red;
+   color: white;
+   padding: 10px;
+   margin: 10px;
  }
