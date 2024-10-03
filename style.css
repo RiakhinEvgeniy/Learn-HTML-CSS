@@ -1,6 +1,25 @@
- .static-box {
+ /* .static-box {
    background-color: red;
    color: white;
    padding: 10px;
    margin: 10px;
+ } */
+
+ .div {
+   border: 1px solid black;
+ }
+
+ .box {
+   margin: 5px;
+   padding: 5px;
+   color: white;
+   background-color: #3698db;
+ }
+ .relative-box {
+   position: relative;
+   left: 15px;
+   top: 15px;
+   margin: 5px;
+   background-color: red;
+   color: white;
  }
