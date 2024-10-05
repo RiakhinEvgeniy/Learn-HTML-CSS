@@ -20,7 +20,7 @@
    transform: scale(1.5, 1.5);
 } */
 
-.clock {
+/* .clock {
    position: relative;
    width: 200px;
    height: 200px;
@@ -41,4 +41,28 @@
 
 .hour-hand {
    transform: rotate(30deg);
+} */
+
+/* .rotating-element {
+   width: 100px;
+   height: 100px;
+   background-color: #3498db;
+   transform-origin: 50% 50%;
+   transition: 1s;
+}
+
+.rotating-element:hover {
+   transform: rotate(45deg);
+} */
+
+.box {
+   width: 100px;
+   height: 100px;
+   background-color: #2ecc71;
+   transform-origin: bottom right;
+   transition: 1s;
+}
+
+.box:hover {
+   transform: rotate(45deg);
 }
