@@ -1,47 +1,40 @@
-body {
-   margin: 0;
-   font-family: Arial, sans-serif;
- }
- 
- .header {
-   background-color: #333;
-   color: white;
-   padding: 20px;
-   text-align: center;
- }
- 
- .navbar {
+.body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+   display: flex;
+   width: 100%;
+}
+
+.navbar {
+   display: flex;
    position: fixed;
    top: 0;
+   left: 0;
    width: 100%;
-   background-color: red;
+   background-color: #2b2e7b;
    color: white;
-   padding: 10px;
-   box-sizing: border-box;
-   z-index: 1000;
- }
- 
- .container {
-   display: flex;
-   margin-top: 60px; /* Высота фиксированной навигации */
- }
- 
- .main-content {
-   flex: 3;
-   padding: 20px;
- }
- 
- .sidebar {
+   justify-content: center;
+   align-items: center;
+   height: 40px;
+   font-size: 24px;
+   padding: 5px;
+}
+.main-content {
+   margin-top: 40px;
+   flex: 4;
+   font-size: 20px;
+   background-color: antiquewhite;
+}
+.sidebar {
    flex: 1;
+   background-color: blue;
    padding: 20px;
-   background-color: lightcoral;
- }
- 
- .footer {
-   background-color: green;
+   margin-top: 40px;
    color: white;
-   padding: 20px;
+   font-size: 24px;
+   justify-content: center;
    text-align: center;
-   position: relative;
-   margin-top: auto;
- }
+   height: 200px;
+}
