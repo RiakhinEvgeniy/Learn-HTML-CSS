@@ -55,7 +55,7 @@
    transform: rotate(45deg);
 } */
 
-.box {
+/* .box {
    width: 100px;
    height: 100px;
    background-color: #2ecc71;
@@ -65,4 +65,75 @@
 
 .box:hover {
    transform: rotate(45deg);
+} */
+
+/* .transformed-element {
+   width: 100px;
+   height: 100px;
+   background-color: #2ecc71;
+   transform: translate(100px, 0) rotate(30deg) scale(2.0, 1.5);
+} */
+
+/* .element1 {
+   width: 100px;
+   height: 100px;
+   background-color: green;
+   transform: rotate(45deg) translate(50px, 50px);
+}
+
+.element2 {
+   width: 100px;
+   height: 100px;
+   background-color: red;
+   transform: translate(50px, 50px) rotate(45deg);
+} */
+
+/* .box {
+   width: 150px;
+   height: 150px;
+   background-color: #f1c40f;
+   transition: width 1.5s linear, height 1.5s linear, background-color 1.5s linear;
+}
+
+.box:hover {
+   width: 200px;
+   height: 200px;
+   background-color: #e67e22;
+   transition-delay: 1s;
+} */
+
+/* .transition-box {
+   width: 100px;
+   height: 100px;
+   background-color: #9b59b6;
+   transition: all 1.5s ease-in-out;
+}
+
+.transition-box:hover {
+   background-color: #8e44ad;
+   transform: rotate(45deg) scale(1.5);
+} */
+
+/* .color-transition {
+   width: 150px;
+   height: 150px;
+   background-color: #3498db;
+   transition: background-color 2s ease-in-out;
+}
+
+.color-transition:hover {
+   background-color: #e74c3c;
+} */
+
+.box {
+   position: relative;
+   left: 0;
+   width: 100px;
+   height: 100px;
+   background-color: #e74c3c;
+   transition: left 2s;
+}
+
+.box:hover {
+   left: 100px;
 }
