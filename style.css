@@ -1,139 +1,206 @@
-/* .movable-element {
-   width: 100px;
-   height: 100px;
-   background-color: #3498db;
-   transition: transform 0.5s;
+/* @keyframes changeColor {
+   from {
+      background-color: red;
+   }
+   to {
+      background-color: green;
+   }
 }
 
-.movable-element:hover {
-   transform: translate(50px, 50px);
-} */
-
-/* .scale-element {
-   width: 100px;
-   height: 100px;
-   background-color: #2ecc71;
-   transition: transform 0.5s;
-}
-
-.scale-element:hover {
-   transform: scale(1.5, 1.5);
-} */
-
-/* .clock {
-   position: relative;
+.animated-box {
    width: 200px;
    height: 200px;
-   border: 5px solid red;
-   border-radius: 50%;
-   margin: 50px auto;
-}
-
-.hand {
-   position: absolute;
-   width: 5px;
-   height: 50%;
-   left: 50%;
-   bottom: 50%;
    background-color: red;
-   transform-origin: bottom center;
-}
-
-.hour-hand {
-   transform: rotate(30deg);
+   animation: changeColor 3s infinite;
 } */
 
-/* .rotating-element {
-   width: 100px;
-   height: 100px;
-   background-color: #3498db;
-   transform-origin: 50% 50%;
-   transition: 1s;
+/* @keyframes moveAndChangeColor {
+   0% {
+      background-color: #e74c3c;
+      transform: translate(0, 0);
+   }
+   50% {
+      background-color: #f1c40f;
+      transform: translate(100px, 100px);
+   }
+   100% {
+      background-color: #3498db;
+      transform: translate(0, 0);
+   }
 }
 
-.rotating-element:hover {
-   transform: rotate(45deg);
+.box {
+   width: 100px;
+   height: 100px;
+   background-color: #e74c3c;
+   animation: moveAndChangeColor 5s infinite;
+} */
+
+/* @keyframes pulsate {
+   0% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.2);
+   }
+   100% {
+      transform: scale(1);
+   }
+}
+
+.pulsate {
+   width: 200px;
+   height: 200px;
+   background-color: #9b59b6;
+   animation: pulsate 3s infinite;
+} */
+
+/* .animated-box {
+   width: 120px;
+   height: 120px;
+   background-color: #2ecc71;
+   animation-name: rotate;
+   animation-timing-function: ease-in-out;
+   animation-duration: 4s;
+}
+
+@keyframes rotate {
+   0% {
+      transform: rotate(0deg);
+   }
+   50% {
+      transform: rotate(180deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
 } */
 
 /* .box {
-   width: 100px;
-   height: 100px;
-   background-color: #2ecc71;
-   transform-origin: bottom right;
-   transition: 1s;
-}
-
-.box:hover {
-   transform: rotate(45deg);
-} */
-
-/* .transformed-element {
-   width: 100px;
-   height: 100px;
-   background-color: #2ecc71;
-   transform: translate(100px, 0) rotate(30deg) scale(2.0, 1.5);
-} */
-
-/* .element1 {
-   width: 100px;
-   height: 100px;
-   background-color: green;
-   transform: rotate(45deg) translate(50px, 50px);
-}
-
-.element2 {
-   width: 100px;
-   height: 100px;
-   background-color: red;
-   transform: translate(50px, 50px) rotate(45deg);
-} */
-
-/* .box {
-   width: 150px;
-   height: 150px;
-   background-color: #f1c40f;
-   transition: width 1.5s linear, height 1.5s linear, background-color 1.5s linear;
-}
-
-.box:hover {
-   width: 200px;
-   height: 200px;
-   background-color: #e67e22;
-   transition-delay: 1s;
-} */
-
-/* .transition-box {
    width: 100px;
    height: 100px;
    background-color: #9b59b6;
-   transition: all 1.5s ease-in-out;
+   animation-name: slideRight;
+   animation-duration: 5s;
+   animation-direction: alternate;
+   animation-iteration-count: infinite;
 }
 
-.transition-box:hover {
-   background-color: #8e44ad;
-   transform: rotate(45deg) scale(1.5);
+@keyframes slideRight {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(500px);
+   }
 } */
 
-/* .color-transition {
+/* .animated-box {
    width: 150px;
    height: 150px;
-   background-color: #3498db;
-   transition: background-color 2s ease-in-out;
+   background-color: #2ecc71;
+   animation-name: swing;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   animation-duration: 2s;
 }
 
-.color-transition:hover {
-   background-color: #e74c3c;
+@keyframes swing {
+   0% {
+      transform: rotate(0deg);
+   }
+   33% {
+      transform: rotate(10deg);
+   }
+
+   100% {
+      transform: rotate(-100deg);
+   }
 } */
 
-.box {
-   position: relative;
-   left: 0;
-   width: 100px;
-   height: 100px;
-   background-color: #e74c3c;
-   transition: left 2s;
+/* .animated-box {
+   width: 120px;
+   height: 120px;
+   background-color: #9b59b6;
+   animation-name: scaleUp;
+   animation-timing-function: ease-in-out;
+   animation-delay: 1s;
+   animation-direction: alternate-reverse;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
 }
 
-.box:hover {
-   left: 100px;
+@keyframes scaleUp {
+   0% {
+      transform: scale(1);
+   }
+
+   100% {
+      transform: scale(1.5);
+   }
+} */
+
+/* .button {
+   width: 100px;
+   height: 50px;
+   background-color: #3498db;
+   color: white;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+   background-color: #2980b9;
+   transform: scale(1.1);
+} */
+
+/* .animated-button {
+   width: 100px;
+   height: 50px;
+   background-color: #e74c3c;
+   color: white;
+   transition: transform 0.1s ease;
+   border: none;
+   cursor: pointer;
+}
+
+.animated-button:active {
+   transform: scale(0.95);
+} */
+
+/* .animated-element {
+   width: 100px;
+   height: 100px;
+   background-color: #3498db;
+   animation: multi-animation 4s ease alternate infinite;
+}
+
+@keyframes multi-animation {
+   from {
+      transform: scale(1) rotate(0deg) translate(0px);
+   }
+   to {
+      transform: scale(1.5) rotate(45deg) translate(100px);
+   }
+} */
+
+.box-for-animate {
+   width: 100px;
+   height: 100px;
+   background-color: #2ecc71;
+}
+
+.box-for-animate.animate {
+   animation: moveAndRotate 3s ease;
+}
+
+@keyframes moveAndRotate {
+   from {
+      transform: translate(0) rotate(0deg);
+   }
+   to {
+      transform: translateX(200px) rotate(360deg);
+   }
 }

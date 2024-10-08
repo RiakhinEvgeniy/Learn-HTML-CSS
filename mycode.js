@@ -86,3 +86,8 @@
     // const userData = document.querySelector('[data-user-id]');
     // console.log(userData.dataset.userId);
     // console.log(userData.dataset.role);
+
+    document.getElementById('start-btn').addEventListener('click', function() {
+        //TODO:
+        document.getElementById('animate-box').classList.toggle('animate');
+    });
