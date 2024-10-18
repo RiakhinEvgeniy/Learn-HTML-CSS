@@ -75,7 +75,7 @@
     background-color: red;
 } */
 
-input:disabled {
+/* input:disabled {
     cursor: not-allowed;
     background-color: #d3d3d3;
 }
@@ -83,4 +83,14 @@ input:disabled {
 button:disabled {
     background-color: #d3d3d3;
     cursor: not-allowed;
+} */
+
+input:invalid {
+    border: 1px solid red;
+    background-color: lightpink;
+}
+
+textarea:invalid {
+    border: 1px solid red;
+    background-color: lightpink;
 }
