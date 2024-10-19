@@ -85,7 +85,7 @@ button:disabled {
     cursor: not-allowed;
 } */
 
-input:invalid {
+/* input:invalid {
     border: 1px solid red;
     background-color: lightpink;
 }
@@ -93,4 +93,9 @@ input:invalid {
 textarea:invalid {
     border: 1px solid red;
     background-color: lightpink;
+} */
+
+p::selection {
+    background-color: blue;
+    color: white;
 }
