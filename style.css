@@ -162,3 +162,35 @@ p::first-line {
     background-color: #fffde7;
 } */
 
+/* div p:first-child::first-line {
+    font-weight: bold;
+    color: #2ecc71;
+} */
+
+/* ul li:last-child::after {
+    content: "❦";
+    color: #e74c3c;
+    padding-left: 10px;
+}
+
+ol li:last-child::after {
+    content: "❦";
+    color: #e74c3c;
+    padding-left: 10px;
+} */
+
+/* Стилизуйте текстовое поле ввода так, 
+чтобы при фокусе оно получало 
+синюю границу (#3498db) и 
+тень (box-shadow) с размерами 0 0 5px и 
+цветом rgba(52, 152, 219, 0.5). 
+В обычном состоянии граница должна быть серой (#ccc). */
+
+input {
+    border-color: #ccc;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
