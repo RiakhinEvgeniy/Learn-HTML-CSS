@@ -87,7 +87,16 @@
     // console.log(userData.dataset.userId);
     // console.log(userData.dataset.role);
 
-    document.getElementById('start-btn').addEventListener('click', function() {
-        //TODO:
-        document.getElementById('animate-box').classList.toggle('animate');
-    });
+    // document.getElementById('start-btn').addEventListener('click', function() {
+    //     document.getElementById('animate-box').classList.toggle('animate');
+    // });
+
+    const button = document.getElementById('changeColorsButton');
+        button.addEventListener('click', () => {
+            const root = document.documentElement;
+            const currentBgColor = getComputedStyle(root).getPropertyValue("--main-bg-color");
+            const currentTxColor = getComputedStyle(root).getPropertyValue("--main-text-color");
+
+            root.style.setProperty("--main-bg-color", currentTxColor);
+            root.style.setProperty("--main-text-color", currentBgColor);
+        });

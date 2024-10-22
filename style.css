@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --main-bg-color: lightgray;
     --main-text-color: red;
     --button-color: lightgreen;
@@ -14,4 +14,31 @@ p {
 
 button {
     background-color: var(--button-color);
+} */
+
+/* Добавьте кнопку на страницу, 
+при нажатии на которую переменные 
+--main-bg-color и --main-text-color 
+меняются местами. 
+Реализуйте это с помощью JavaScript, 
+изменяя значения переменных, 
+заданных в :root. */
+
+:root {
+    --main-bg-color: red;
+    --main-text-color: white;
+}
+
+body {
+    background-color: lightcoral;
+}
+
+button {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    margin: 30px;
 }
