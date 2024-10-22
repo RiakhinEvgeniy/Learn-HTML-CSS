@@ -91,12 +91,14 @@
     //     document.getElementById('animate-box').classList.toggle('animate');
     // });
 
-    const button = document.getElementById('changeColorsButton');
-        button.addEventListener('click', () => {
-            const root = document.documentElement;
-            const currentBgColor = getComputedStyle(root).getPropertyValue("--main-bg-color");
-            const currentTxColor = getComputedStyle(root).getPropertyValue("--main-text-color");
+    // const button = document.getElementById('changeColorsButton');
+    //     button.addEventListener('click', () => {
+    //         const root = document.documentElement;
+    //         const currentBgColor = getComputedStyle(root).getPropertyValue("--main-bg-color");
+    //         const currentTxColor = getComputedStyle(root).getPropertyValue("--main-text-color");
 
-            root.style.setProperty("--main-bg-color", currentTxColor);
-            root.style.setProperty("--main-text-color", currentBgColor);
-        });
+    //         root.style.setProperty("--main-bg-color", currentTxColor);
+    //         root.style.setProperty("--main-text-color", currentBgColor);
+    //     });
+
+    // document.documentElement.style.setProperty("--padding", "50px");

@@ -24,7 +24,7 @@ button {
 изменяя значения переменных, 
 заданных в :root. */
 
-:root {
+/* :root {
     --main-bg-color: red;
     --main-text-color: white;
 }
@@ -41,4 +41,156 @@ button {
     border: none;
     border-radius: 8px;
     margin: 30px;
+} */
+
+/* :root {
+    --main-bg-color: #3498db;
+    --main-text-color: #ffffff;
+}
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+} */
+
+/* :root {
+    --main-bg-color: lightgray;
+    --main-text-color: red;
+    --link-color: green;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+p {
+    color: var(--main-text-color);
+}
+
+a {
+    color: var(--link-color);
+} */
+
+/* :root {
+    --padding: 20px;
+    --margin: 30px;
+}
+
+.container {
+    padding: var(--padding);
+    margin: var(--margin);
+    border: 1px solid red;
+} */
+
+/* :root {
+    --main-color: blue;
+    --main-font-size: 20px;
+}
+
+h1 {
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+}
+
+h2 {
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+}
+
+p {
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+}
+
+span {
+    color: var(--main-color);
+    font-size: var(--main-font-size);
+} */
+
+/* :root {
+    --main-color: blue;
+    --main-padding: 24px;
+}
+
+div {
+    color: var(--main-color);
+    padding: var(--main-padding);
+}
+
+.header {
+    --main-color: green;
+    color: var(--main-color);
+} */
+
+/* :root {
+    --padding: 30px;
+    --font-size: 30px;
+}
+
+div {
+    padding: var(--padding);
+    font-size: var(--font-size);
+}
+
+p {
+    padding: var(--padding);
+    font-size: var(--font-size);
+}
+
+@media (max-width: 600px) {
+    :root {
+        --padding: 12px;
+        --font-size: 12px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    :root {
+        --padding: 20px;
+        --font-size: 20px;
+    }
+} */
+
+/* Определите CSS-переменные 
+для цвета фона (--bg-color), 
+цвета текста (--text-color) 
+и цвета ссылок (--link-color). 
+Используйте их для стилизации body и a. 
+Создайте медиа-запрос для темной 
+темы (prefers-color-scheme: dark), 
+чтобы изменить цвета на темные, 
+когда пользователь предпочитает темную тему. */
+:root {
+    --bg-color: lightgray;
+    --text-color: green;
+    --link-color: blue;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --bg-color: black;
+    --text-color: white;
+    --link-color: lightgray;
+    }
 }
