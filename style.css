@@ -1,0 +1,17 @@
+:root {
+    --main-bg-color: lightgray;
+    --main-text-color: red;
+    --button-color: lightgreen;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+p {
+    color: var(--main-text-color);
+}
+
+button {
+    background-color: var(--button-color);
+}
