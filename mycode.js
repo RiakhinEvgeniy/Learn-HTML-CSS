@@ -87,7 +87,7 @@
     // console.log(userData.dataset.userId);
     // console.log(userData.dataset.role);
 
-    document.getElementById('start-btn').addEventListener('click', function() {
-        //TODO:
-        document.getElementById('animate-box').classList.toggle('animate');
-    });
+    // document.getElementById('start-btn').addEventListener('click', function() {
+    //     //TODO:
+    //     document.getElementById('animate-box').classList.toggle('animate');
+    // });
