@@ -250,15 +250,7 @@ a {
     background: radial-gradient(circle at center, red 0%, yellow 25%, green 50%, blue 100%);
 } */
 
-/* Определите элемент с классом multi-color-gradient. 
-Создайте линейный градиент под углом 45 градусов, 
-который плавно переходит через пять цветов: 
-красный (hsl), желтый (rgb), синий (hsla), 
-зеленый (rgba), и циан (rgb). 
-Каждый цвет должен начинаться в 
-определенной контрольной точке (0%, 25%, 50%, 75%, 100%). */
-
-.multi-color-gradient {
+/* .multi-color-gradient {
     width: 80%;
     height: 300px;
     background: linear-gradient(45deg,
@@ -267,4 +259,44 @@ a {
         hsla(240, 100%, 50%, 1) 50%,
         rgba(0, 255, 0, 1) 75%,
         rgb(0, 255, 255) 100%);
+} */
+
+/* .animated-background {
+    width: 80%;
+    height: 300px;
+    animation-name: color-change;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes color-change {
+    0% {
+        background-color: hsl(0, 100%, 50%);
+    }
+
+    50% {
+        background-color: hsl(120, 100%, 50%);
+    }
+
+    100% {
+        background-color: hsl(240, 100%, 50%);
+    }
+} */
+
+/* Определите элемент с классом dynamic-styles. 
+Используйте CSS-переменные для задания 
+базового размера шрифта и коэффициента масштабирования. 
+Используйте функцию calc() для вычисления размеров шрифта, 
+отступов и полей, основанных на этих переменных. */
+
+:root {
+    --base-font-size: 16px;
+    --scaling-factor: 1.5;
+}
+
+.dynamic-styles {
+    font-size: calc(var(--base-font-size) * var(--scaling-factor));
+    margin: calc(10px * var(--scaling-factor));
+    padding: calc(5px * var(--scaling-factor));
 }
