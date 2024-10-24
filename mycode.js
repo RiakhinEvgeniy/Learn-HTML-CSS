@@ -103,9 +103,9 @@
 
     // document.documentElement.style.setProperty("--padding", "50px");
 
-    document.querySelector('.theme-toggle').addEventListener('click', function() {
-        let currentHue = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hue'));
-        // let newColor = (currentHue + 37) % 360;
-        let newColor = Math.floor(Math.random() * 360) - currentHue;
-        document.documentElement.style.setProperty('--hue', newColor);
-    });
+    // document.querySelector('.theme-toggle').addEventListener('click', function() {
+    //     let currentHue = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hue'));
+    //     // let newColor = (currentHue + 37) % 360;
+    //     let newColor = Math.floor(Math.random() * 360) - currentHue;
+    //     document.documentElement.style.setProperty('--hue', newColor);
+    // });

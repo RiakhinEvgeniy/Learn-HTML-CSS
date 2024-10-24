@@ -295,7 +295,7 @@ a {
     padding: calc(5px * var(--scaling-factor));
 } */
 
-:root {
+/* :root {
     --hue: 0;
 }
 
@@ -303,4 +303,4 @@ a {
     width: 50%;
     height: 100px;
     background-color: hsl(var(--hue), 100%, 50%);
-}
+} */
