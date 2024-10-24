@@ -284,13 +284,7 @@ a {
     }
 } */
 
-/* Определите элемент с классом dynamic-styles. 
-Используйте CSS-переменные для задания 
-базового размера шрифта и коэффициента масштабирования. 
-Используйте функцию calc() для вычисления размеров шрифта, 
-отступов и полей, основанных на этих переменных. */
-
-:root {
+/* :root {
     --base-font-size: 16px;
     --scaling-factor: 1.5;
 }
@@ -299,4 +293,14 @@ a {
     font-size: calc(var(--base-font-size) * var(--scaling-factor));
     margin: calc(10px * var(--scaling-factor));
     padding: calc(5px * var(--scaling-factor));
+} */
+
+:root {
+    --hue: 0;
+}
+
+.theme-toggle {
+    width: 50%;
+    height: 100px;
+    background-color: hsl(var(--hue), 100%, 50%);
 }
