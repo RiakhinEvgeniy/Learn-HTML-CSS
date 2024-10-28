@@ -4,11 +4,13 @@
       lang="en">
 <head>
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{style.css}" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1>Design your taco!</h1>
-<img width="50px" height="50px" src="camera-icon.png" alt="img"/>
+<header class="header">    
+    <h1>Design your taco!</h1>
+    <img width="50px" height="50px" src="camera-icon.png" alt="img"/>
+</header>
 <form method="POST" th:object="${taco}">
     <div class="grid">
         <div class="ingredient-group" id="wraps">
@@ -47,11 +49,13 @@
             </div>
         </div>
     </div>
-    <div>
-        <h3>Name your taco creation:</h3>
-        <input type="text" th:field="*{name}"/>
-        <br/>
-        <button>Submit Your Taco</button>
+    
+    <div class="form-taco-creation">
+        <div class="container-form">
+            <h3>Name your taco creation:</h3>
+            <input class="form-input" type="text" th:field="*{name}"/>
+            <button class="btn">Submit Your Taco</button>
+        </div>
     </div>
 </form>
 </body>

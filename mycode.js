@@ -91,3 +91,65 @@
     //     //TODO:
     //     document.getElementById('animate-box').classList.toggle('animate');
     // });
+
+    // Генерация случайных чисел и их округление
+// const randomA = Math.random() * 100;
+// const randomB = Math.random() * 100;
+
+// console.log(randomA);
+// console.log(randomB);
+
+// const intA = Math.round(randomA);
+// const intB = Math.round(randomB);
+
+// // Нахождение максимального и минимального значений
+// let maxNumber = Math.max(intA, intB);
+// let minNumber = Math.min(intA, intB);
+
+// // Вывод результатов
+// console.log('Сгенерированные числа:', intA, " ", intB);
+// console.log('Максимальное значение:', maxNumber);
+// console.log('Минимальное значение:', minNumber);
+
+// const string = "123"
+// const integer = parseInt(string);
+// const float = parseFloat(string);
+// const number = Number(string);
+
+// console.log(integer + " " + float + " " + number);
+
+// Создание строки, содержащей текст
+// let originalString = "Пример текста для преобразования";
+
+// let upperCaseString = originalString.toUpperCase();
+
+// let lowerCaseString = originalString.toLowerCase();
+
+// console.log(upperCaseString);
+// console.log(lowerCaseString);
+
+// let string = "   Hello, World!   "
+// let changeString = string.replace("World", "Игорь");
+// let resultString = changeString.trim();
+// console.log(resultString);
+
+// Запрашиваем число n у пользователя
+// const string = prompt("Введите число n:");
+// let n = parseInt(string);
+
+// // Инициализируем переменные
+// let sum = 0;
+// let i = 1;
+
+// while (i <= n) {
+//     sum = sum + i;
+//     i++; 
+// }
+
+// console.log("Сумма чисел от 1 до " + n + " равна " + sum);
+
+for(let i = 1; i <= 22; i++) {
+    if(i % 2 === 0) {
+        console.log(i);
+    }
+}
