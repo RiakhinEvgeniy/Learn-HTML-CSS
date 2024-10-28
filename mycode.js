@@ -50,17 +50,24 @@
 
 // console.log(arr.length);
 
-// Создание массива чисел от 1 до 10
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// Инициализация переменной для хранения суммы элементов
-let sum = 0;
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// Перебор элементов массива с использованием цикла for...of
-for (const i of numbers) {
-    console.log(i);
-    sum += i;
-}
+// let sum = 0;
 
-// Вывод суммы всех элементов массива в консоль
-console.log(sum);
+// for (const i of numbers) {
+//     console.log(i);
+//     sum += i;
+// }
+
+// console.log(sum);
+
+const user = {
+    имя: "Alice",
+    возраст: 25,
+    профессия: "Engineer"
+  };
+  
+  for(let k in user) {
+    console.log(k + ": " + user[k]);
+  }
