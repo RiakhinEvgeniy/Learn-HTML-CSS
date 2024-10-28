@@ -17,18 +17,24 @@
 //     console.log("Вам нельзя водить машину");
 // }
 
-// Запрашиваем у пользователя, является ли сегодня выходным
-const stringWeekend = prompt("Сегодня выходной? (yes/no)");
-//TODO:
-let weekend = stringWeekend === "yes";
-// Запрашиваем у пользователя, является ли сегодня праздничным днем
-const stringHoliday = prompt("Сегодня праздничный день? (yes/no)");
-//TODO:
-let hoiliday = stringHoliday === "yes";
-// Проверяем условия и выводим соответствующее сообщение
-//TODO:
-if(weekend || hoiliday) {
-    console.log("Сегодня выходной");
-} else {
-    console.log("Сегодня рабочий день");
-}
+// const stringWeekend = prompt("Сегодня выходной? (yes/no)");
+// let weekend = stringWeekend === "yes";
+
+// const stringHoliday = prompt("Сегодня праздничный день? (yes/no)");
+// let hoiliday = stringHoliday === "yes";
+
+// if(weekend || hoiliday) {
+//     console.log("Сегодня выходной");
+// } else {
+//     console.log("Сегодня рабочий день");
+// }
+
+let fruits = ["Apple", "Banana", "Cherry"];
+
+fruits[1] = "Blueberry";
+
+console.log(fruits);
+
+fruits.push("Mango");
+
+console.log(fruits.length);
