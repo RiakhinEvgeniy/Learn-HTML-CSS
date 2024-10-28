@@ -29,12 +29,38 @@
 //     console.log("Сегодня рабочий день");
 // }
 
-let fruits = ["Apple", "Banana", "Cherry"];
+// let fruits = ["Apple", "Banana", "Cherry"];
 
-fruits[1] = "Blueberry";
+// fruits[1] = "Blueberry";
 
-console.log(fruits);
+// console.log(fruits);
 
-fruits.push("Mango");
+// fruits.push("Mango");
 
-console.log(fruits.length);
+// console.log(fruits.length);
+
+
+// let arr = [];
+
+// arr.unshift("start1", "start2");
+
+// arr.push("end1", "end2");
+
+// console.log(arr);
+
+// console.log(arr.length);
+
+// Создание массива чисел от 1 до 10
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Инициализация переменной для хранения суммы элементов
+let sum = 0;
+
+// Перебор элементов массива с использованием цикла for...of
+for (const i of numbers) {
+    console.log(i);
+    sum += i;
+}
+
+// Вывод суммы всех элементов массива в консоль
+console.log(sum);
