@@ -62,12 +62,29 @@
 
 // console.log(sum);
 
-const user = {
-    имя: "Alice",
-    возраст: 25,
-    профессия: "Engineer"
-  };
+// const user = {
+//     имя: "Alice",
+//     возраст: 25,
+//     профессия: "Engineer"
+//   };
   
-  for(let k in user) {
-    console.log(k + ": " + user[k]);
-  }
+//   for(let k in user) {
+//     console.log(k + ": " + user[k]);
+//   }
+
+// for (let i = 0; i <= 10; i++) {
+//     if(i % 2 === 0) {
+//         continue;
+//     }
+//     console.log(i); 
+// }
+
+//TODO:
+function showItems(firstItem, ...anotherItem) {
+    console.log(firstItem);
+    console.log(`${anotherItem.join(", ")}`);
+}
+// Примеры вызова функции с различным количеством аргументов
+showItems("яблоко", "банан", "груша");
+showItems("машина");
+showItems("первый", "второй", "третий", "четвертый");
