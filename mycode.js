@@ -79,12 +79,23 @@
 //     console.log(i); 
 // }
 
-//TODO:
-function showItems(firstItem, ...anotherItem) {
-    console.log(firstItem);
-    console.log(`${anotherItem.join(", ")}`);
-}
-// Примеры вызова функции с различным количеством аргументов
-showItems("яблоко", "банан", "груша");
-showItems("машина");
-showItems("первый", "второй", "третий", "четвертый");
+// function showItems(firstItem, ...anotherItem) {
+//     console.log(firstItem);
+//     console.log(`${anotherItem.join(", ")}`);
+// }
+// // Примеры вызова функции с различным количеством аргументов
+// showItems("яблоко", "банан", "груша");
+// showItems("машина");
+// showItems("первый", "второй", "третий", "четвертый");
+
+let book = {
+    title: "Chronicles of Narnia", 
+    author: "Claiv Luis",
+    year: "54",
+
+    getSummary: function() {
+        return this.title + " by " + this.author + " published in " + this.year;
+    }
+};
+
+console.log(book.getSummary());
