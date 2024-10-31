@@ -162,8 +162,44 @@
 // console.log(firstColor);
 // console.log(thirdColor);
 
-let arr = ["green", "yellow", "red"];
-let num = [1, 2, 3];
-let arrCopy = [...arr];
-let twoCopy = [...arr, ...num];
-console.log(twoCopy);
+// let arr = ["green", "yellow", "red"];
+// let num = [1, 2, 3];
+// let arrCopy = [...arr];
+// let twoCopy = [...arr, ...num];
+// console.log(twoCopy);
+
+// function sum(...numbers) {
+//     return numbers.reduce((result, x) => result + x, 0);
+// }
+
+// console.log(sum(1, 2, 3));
+// console.log(sum(1, 2, 3, 4));
+
+// let defultSettings = {theme: "dark", showNitification: false};
+// let userSettings = {showNitification: true, fontSize: 14};
+// let settings = {...defultSettings, ...userSettings};
+// console.log(settings);
+
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { c: 3, d: 4 };
+// const combinedObject = { ...obj1, ...obj2 };
+
+// console.log(combinedObject);
+
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5, 6];
+// const combinedArray = [...array1, ...array2];
+// console.log(combinedArray);
+
+// Создание объекта person
+const person = {
+    name: 'John Doe',
+    age: 30,
+    email: 'john.doe@example.com',
+    country: 'USA'
+};
+
+const {name, age, ...rest} = person;
+console.log(name);
+console.log(age);
+console.log(rest);
