@@ -88,14 +88,76 @@
 // showItems("машина");
 // showItems("первый", "второй", "третий", "четвертый");
 
-let book = {
-    title: "Chronicles of Narnia", 
-    author: "Claiv Luis",
-    year: "54",
+// let book = {
+//     title: "Chronicles of Narnia", 
+//     author: "Claiv Luis",
+//     year: "54",
 
-    getSummary: function() {
-        return this.title + " by " + this.author + " published in " + this.year;
-    }
-};
+//     getSummary: function() {
+//         return this.title + " by " + this.author + " published in " + this.year;
+//     }
+// };
 
-console.log(book.getSummary());
+// console.log(book.getSummary());
+
+// let user = {
+//     name: "Evgeniy",
+//     age: 44
+// }
+// console.log(user);
+
+// user.age = 45;
+// user.email = "evgeniir.e.u@gmail.com";
+
+// console.log(user);
+
+// let user = {
+//     username: "Evgeniy",
+//     email: "evgeniy@gmail.com",
+
+//     getDetails() {
+//         return `Username: [${this.username}], Email: [${this.email}]`;
+//      }
+// };
+
+// console.log(user.getDetails());
+
+// let product = {
+//     name: "table",
+//     price: 500
+// }
+
+// let {isProduct = true} = product;
+// console.log(product.name);
+// console.log(isProduct);
+
+// let person = {
+//     name: "Evgeniy",
+//         address: {
+//             city: "Odessa",
+//             street: "bocharova 15"
+//         }
+// }
+
+// let {address: {city, street}} = person;
+// console.log(city);
+// console.log(street);
+
+// const employee = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     position: 'Developer',
+//     salary: 50000
+//   };
+  
+//   const {firstName: fName, lastName: lName} = employee;
+//   console.log(fName);
+//   console.log(lName);
+
+
+const colors = ['red', 'green', 'blue', 'yellow'];
+
+const [firstColor, , thirdColor] = colors;
+
+console.log(firstColor);
+console.log(thirdColor);
