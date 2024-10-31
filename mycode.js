@@ -155,9 +155,15 @@
 //   console.log(lName);
 
 
-const colors = ['red', 'green', 'blue', 'yellow'];
+// const colors = ['red', 'green', 'blue', 'yellow'];
 
-const [firstColor, , thirdColor] = colors;
+// const [firstColor, , thirdColor] = colors;
 
-console.log(firstColor);
-console.log(thirdColor);
+// console.log(firstColor);
+// console.log(thirdColor);
+
+let arr = ["green", "yellow", "red"];
+let num = [1, 2, 3];
+let arrCopy = [...arr];
+let twoCopy = [...arr, ...num];
+console.log(twoCopy);
