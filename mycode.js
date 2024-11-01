@@ -228,18 +228,18 @@
 
 // console.log(ceilAndFloor(1.4568));
 
-// Напишите функцию areFloatsEqual, 
-// которая принимает два вещественных числа и возвращает true, 
-// если разница между ними меньше заданного порога epsilon, 
-// и false в противном случае. Используйте Math.abs() 
-// для вычисления разницы и задайте epsilon равным 0.00001. 
-// Пример: для чисел 1.00000001 и 1.00000002 функция должна вернуть true.
+// function areFloatsEqual(num1, num2) {
+//         if(Math.abs(num1 - num2) < 0.00001) {
+//             return true;
+//         }
+//         return false;
+//     }
 
-function areFloatsEqual(num1, num2) {
-        if(Math.abs(num1 - num2) < 0.00001) {
-            return true;
-        }
-        return false;
-    }
+//     console.log(areFloatsEqual(1.00000001, 1.00000002));
 
-    console.log(areFloatsEqual(1.00000001, 1.00000002));
+function getCurrentDateTime() {
+    let nowDate = new Date();
+    return nowDate.toISOString();
+}
+
+console.log(getCurrentDateTime());
