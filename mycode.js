@@ -191,15 +191,55 @@
 // const combinedArray = [...array1, ...array2];
 // console.log(combinedArray);
 
-// Создание объекта person
-const person = {
-    name: 'John Doe',
-    age: 30,
-    email: 'john.doe@example.com',
-    country: 'USA'
-};
+// const person = {
+//     name: 'John Doe',
+//     age: 30,
+//     email: 'john.doe@example.com',
+//     country: 'USA'
+// };
 
-const {name, age, ...rest} = person;
-console.log(name);
-console.log(age);
-console.log(rest);
+// const {name, age, ...rest} = person;
+// console.log(name);
+// console.log(age);
+// console.log(rest);
+
+// try {
+//     console.log(undefinedVar);
+// } catch (error) {
+//     console.error("This variable not find!", error.message);
+// }
+
+// function processData() {
+//     try {
+//         console.log("Processing data");
+//     } catch(error) {
+//         console.error("Error", error.message);
+//     } finally {
+//         console.log("Cleanup resources");
+//     }
+// }
+    
+//     processData();
+
+// function ceilAndFloor(num) {
+//     //TODO:
+//     return { ceil: Math.ceil(num), floor: Math.floor(num) };
+// }
+
+// console.log(ceilAndFloor(1.4568));
+
+// Напишите функцию areFloatsEqual, 
+// которая принимает два вещественных числа и возвращает true, 
+// если разница между ними меньше заданного порога epsilon, 
+// и false в противном случае. Используйте Math.abs() 
+// для вычисления разницы и задайте epsilon равным 0.00001. 
+// Пример: для чисел 1.00000001 и 1.00000002 функция должна вернуть true.
+
+function areFloatsEqual(num1, num2) {
+        if(Math.abs(num1 - num2) < 0.00001) {
+            return true;
+        }
+        return false;
+    }
+
+    console.log(areFloatsEqual(1.00000001, 1.00000002));
