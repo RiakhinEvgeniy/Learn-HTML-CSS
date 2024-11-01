@@ -237,9 +237,116 @@
 
 //     console.log(areFloatsEqual(1.00000001, 1.00000002));
 
-function getCurrentDateTime() {
-    let nowDate = new Date();
-    return nowDate.toISOString();
-}
+// function getCurrentDateTime() {
+//     let nowDate = new Date();
+//     return nowDate.toISOString();
+// }
 
-console.log(getCurrentDateTime());
+// console.log(getCurrentDateTime());
+
+// function setAndGetDateComponents() {
+    
+//     let date = new Date();
+    
+//     date.setDate(15);
+//     date.setMonth(0);
+//     date.setFullYear(2025);
+    
+//     date.setHours(12);
+//     date.setMinutes(30);
+//     date.setSeconds(45);
+    
+//     return {
+//         year: date.getFullYear(),
+//         month: date.getMonth(), // Январь - это 0
+//         day: date.getDate(),
+//         hours: date.getHours(),
+//         minutes: date.getMinutes(),
+//         seconds: date.getSeconds()
+//     };
+// }
+
+// console.log(setAndGetDateComponents());
+
+// function highlight(strings, ...values) {
+//     // Собираем строку из строковых частей и значений
+//     return strings.reduce((result, str, i) =>
+//       `${result}${str}${values[i] !== undefined ? `<strong>${values[i]}</srtong>` : ''}`, '');
+//   }
+  
+//   const name = 'Alice';
+//   const hobby = 'coding';
+//   const message = highlight`My name is ${name} and I love ${hobby}.`;
+  
+//   console.log(message);
+  // Результат: "My name is <strong>Alice</strong> and I love <strong>coding</strong>."
+  
+  
+//   function highlight(strings, ...values) {
+//     return strings.reduce((result, str, i) =>
+//       `${result}${str}${values[i] !== undefined ? `<strong>${values[i]}</strong>` : ''}`, '');
+//   }
+  
+//   const name = 'Alice';
+//   const hobby = 'coding';
+//   const message = highlight`My name is ${name} and I love ${hobby}.`;
+  
+//   console.log(message);
+  
+
+
+//    function highlight(strings, ...values) {
+
+//      return strings.reduce((result, str, i) =>
+//        `${result}${str}<span>${values[i] || ''}</span>`, '');
+//    }
+  
+//    const name = 'Alice';
+//    const hobby = 'coding';
+//    const message = highlight`My name is ${name} and I love ${hobby}.`;
+  
+//    console.log(message);
+// "My name is <span class="highlight">Carol</span> and I love <span class="highlight">painting</span>."
+
+// function createMathMessage(x, y) {
+//     //Сумма X и Y равна Z
+//     let sum = 0;
+//     return `Сумма ${x} и ${y} равна ${sum = x + y}`;
+// }
+
+// console.log(createMathMessage(250 , 2));
+  
+// function createMathMessage(x, y) {
+//     let sum = x + y;
+//     return `Сумма ${x} и ${y} равна ${sum}`;
+// }
+
+// console.log(createMathMessage(250 , 2));
+
+// function bold(strings, ...values) {
+//     return strings.reduce((result, str, i) => `${result}${str}${values[i] !== undefined ? `<b>${values[i]}</b>` : ""}`, "");    
+// }
+    
+//     // Пример вызова функции
+//     const name = "John";
+//     const age = 30;
+//     const result = bold`Name: ${name}, Age: ${age}`;
+    
+//     console.log(result);  // Вывод: Name: <b>John</b>, Age: <b>30</b>
+
+// function greet() {
+//     return console.log("Hello world!");
+// }
+
+// let interval = setInterval(greet, 1000);
+
+// setTimeout(() => {
+//     clearInterval(interval);
+//     console.log("Clear interval");
+// }, 4000);
+
+function delayedMessage(message, delay) {
+        setTimeout(() => {console.log(message)}, delay);
+    }
+
+    delayedMessage("Hello world! Hello earth!!!", 1500);
