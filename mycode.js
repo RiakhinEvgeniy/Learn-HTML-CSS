@@ -91,6 +91,14 @@
 // let isNegativ = numbers.some(num => num < 0);
 // console.log(isNegativ);
 
-const numbers = [2, 4, 6, 8, 10];
-let hasEven = numbers.every(num => num % 2 === 0);
-console.log(hasEven);
+// const numbers = [2, 4, 6, 8, 10];
+// let hasEven = numbers.every(num => num % 2 === 0);
+// console.log(hasEven);
+
+// const numbers = [1, 2, -3, 4, -5];
+// let negativNumber = numbers.find(num => num < 0);
+// console.log(negativNumber);
+
+const numbers = [5, 8, 12, 15, 7];
+let index = numbers.findIndex(num => num > 10);
+console.log(index);
