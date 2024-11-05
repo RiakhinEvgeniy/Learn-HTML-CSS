@@ -1,30 +1,17 @@
-// let parent = {
-//     greet: function() {
-//         console.log("Hello from parent");
-//     }
-// };
-
-// // Создание объекта child, который наследует от parent с использованием свойства __proto__
-// let child = {
-//      __proto__: parent
-// };
-
-// //  child.__proto__ = parent;
-// child.greet();
-
-// Создание объекта animal с методом speak
-let animal = {
-    speak: function() {
-        console.log("Animal speaks");
+// Создаем объект machine с методом start
+let machine = {
+    start: function() {
+        console.log("Start");
     }
 };
 
-let dog = Object.create(animal);
+// Создаем объект robot, который наследует от machine
+let robot = Object.create(machine);
 
-dog.name = "Buddy";
-
-dog.speak = function() {
-    console.log(`${dog.name} speaks`);
+// Добавляем метод stop в прототип объекта machine
+machine.stop = function() {
+    console.log("Stop");
 }
 
-dog.speak();  // Вывод: "Buddy speaks"
+// Вызываем метод stop у объекта robot
+robot.stop();
