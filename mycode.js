@@ -1,352 +1,96 @@
-// const stringAge = prompt("Введите ваш возраст");
+// function updateTime() {
+//     let timeNow = new Date();
+//     let hour = timeNow.getHours();
+//     let min = timeNow.getMinutes();
+//     let hourMin = `${hour}:${min}`;
+//     document.getElementById("clock").textContent = hourMin;
+//     }
+    
+//     function startClock() {
+//        setInterval(updateTime, 1000);    
+//     }
 
-// let age = parseInt(stringAge);
+//     startClock();
 
-// const stringLicense = prompt("У вас есть водительские права? (yes или no)");
+// function mul(a) {
+//    return function(b) {
+//       return a * b;
+//    };
+// }
 
-//  let license = stringLicense;
-//  if(license === "no") {
-//      license = false;
-//  } else{
-//     license = true;
+// let res = mul(5);
+// console.log(res(5));
+
+// function createGreeting(greeting) {
+//    //TODO:
+//    return function(name) {
+//       console.log(`${greeting}, ${name}!`);
 //    }
-
-// if(age >= 18 && license === true) {
-//     console.log("Вы можете водить машину");
-// } else {
-//     console.log("Вам нельзя водить машину");
 // }
+   
+//    // Пример использования:
+//    const greetInEnglish = createGreeting("Hello");
+//    greetInEnglish("Alice"); // Выведет: "Hello, Alice!"
+   
+//    const greetInSpanish = createGreeting("Hola");
+//    greetInSpanish("Carlos"); // Выведет: "Hola, Carlos!"
 
-// const stringWeekend = prompt("Сегодня выходной? (yes/no)");
-// let weekend = stringWeekend === "yes";
-
-// const stringHoliday = prompt("Сегодня праздничный день? (yes/no)");
-// let hoiliday = stringHoliday === "yes";
-
-// if(weekend || hoiliday) {
-//     console.log("Сегодня выходной");
-// } else {
-//     console.log("Сегодня рабочий день");
-// }
-
-// let fruits = ["Apple", "Banana", "Cherry"];
-
-// fruits[1] = "Blueberry";
-
-// console.log(fruits);
-
-// fruits.push("Mango");
-
-// console.log(fruits.length);
+// function createCounter() {
+   
+//       let count = 0;
+//       return function() {
+//          return ++count;
+//       };
+//    }
+   
+//    const counter1 = createCounter();
+//    const counter2 = createCounter();
+   
+//    console.log(counter1()); // 1
+//    console.log(counter1()); // 2
+//    console.log(counter1()); // 3
+   
+//    console.log(counter2()); 
+//    console.log(counter2()); 
+//    console.log(counter2());
 
 
-// let arr = [];
+// let fruits = ["apple", "banana", "cherry", "date", "fig"];
+// let arrFruits = fruits.slice(1, 4);
+// console.log(arrFruits);
 
-// arr.unshift("start1", "start2");
+// const array = [10, 20, 30, 40, 50, 20];
+// let arr1 = array.indexOf(20, 1);
+// let arr2 = array.indexOf(20, 3);
+// console.log(arr1);
+// console.log(arr2);
 
-// arr.push("end1", "end2");
+// const students = [
+//     { name: 'Alice', age: 20 },
+//     { name: 'Bob', age: 22 },
+//     { name: 'Charlie', age: 23 }
+//   ];
+  
+//   students.forEach((student) => {
+//     console.log(`Имя: ${[student.name]}, Возраст: ${[student.age]}`);
+//   });
 
-// console.log(arr);
-
-// console.log(arr.length);
-
+// const numbers = [1, 2, 3, 4, 5];
+// let numbersSqrt = numbers.map((num) => num * num);
+// console.log(numbersSqrt);
 
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let evenArray = numbers.filter((even) => even % 2 === 0);
+// console.log(evenArray);
 
-// let sum = 0;
+// const numbers = [10, 20, 30, 40, 50];
+// let sumArray = numbers.reduce((sum, res) => sum + res, 0);
+// console.log(sumArray);
 
-// for (const i of numbers) {
-//     console.log(i);
-//     sum += i;
-// }
+// const numbers = [5, -1, 8, 12, -7];
+// let isNegativ = numbers.some(num => num < 0);
+// console.log(isNegativ);
 
-// console.log(sum);
-
-// const user = {
-//     имя: "Alice",
-//     возраст: 25,
-//     профессия: "Engineer"
-//   };
-  
-//   for(let k in user) {
-//     console.log(k + ": " + user[k]);
-//   }
-
-// for (let i = 0; i <= 10; i++) {
-//     if(i % 2 === 0) {
-//         continue;
-//     }
-//     console.log(i); 
-// }
-
-// function showItems(firstItem, ...anotherItem) {
-//     console.log(firstItem);
-//     console.log(`${anotherItem.join(", ")}`);
-// }
-// // Примеры вызова функции с различным количеством аргументов
-// showItems("яблоко", "банан", "груша");
-// showItems("машина");
-// showItems("первый", "второй", "третий", "четвертый");
-
-// let book = {
-//     title: "Chronicles of Narnia", 
-//     author: "Claiv Luis",
-//     year: "54",
-
-//     getSummary: function() {
-//         return this.title + " by " + this.author + " published in " + this.year;
-//     }
-// };
-
-// console.log(book.getSummary());
-
-// let user = {
-//     name: "Evgeniy",
-//     age: 44
-// }
-// console.log(user);
-
-// user.age = 45;
-// user.email = "evgeniir.e.u@gmail.com";
-
-// console.log(user);
-
-// let user = {
-//     username: "Evgeniy",
-//     email: "evgeniy@gmail.com",
-
-//     getDetails() {
-//         return `Username: [${this.username}], Email: [${this.email}]`;
-//      }
-// };
-
-// console.log(user.getDetails());
-
-// let product = {
-//     name: "table",
-//     price: 500
-// }
-
-// let {isProduct = true} = product;
-// console.log(product.name);
-// console.log(isProduct);
-
-// let person = {
-//     name: "Evgeniy",
-//         address: {
-//             city: "Odessa",
-//             street: "bocharova 15"
-//         }
-// }
-
-// let {address: {city, street}} = person;
-// console.log(city);
-// console.log(street);
-
-// const employee = {
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     position: 'Developer',
-//     salary: 50000
-//   };
-  
-//   const {firstName: fName, lastName: lName} = employee;
-//   console.log(fName);
-//   console.log(lName);
-
-
-// const colors = ['red', 'green', 'blue', 'yellow'];
-
-// const [firstColor, , thirdColor] = colors;
-
-// console.log(firstColor);
-// console.log(thirdColor);
-
-// let arr = ["green", "yellow", "red"];
-// let num = [1, 2, 3];
-// let arrCopy = [...arr];
-// let twoCopy = [...arr, ...num];
-// console.log(twoCopy);
-
-// function sum(...numbers) {
-//     return numbers.reduce((result, x) => result + x, 0);
-// }
-
-// console.log(sum(1, 2, 3));
-// console.log(sum(1, 2, 3, 4));
-
-// let defultSettings = {theme: "dark", showNitification: false};
-// let userSettings = {showNitification: true, fontSize: 14};
-// let settings = {...defultSettings, ...userSettings};
-// console.log(settings);
-
-// const obj1 = { a: 1, b: 2 };
-// const obj2 = { c: 3, d: 4 };
-// const combinedObject = { ...obj1, ...obj2 };
-
-// console.log(combinedObject);
-
-// const array1 = [1, 2, 3];
-// const array2 = [4, 5, 6];
-// const combinedArray = [...array1, ...array2];
-// console.log(combinedArray);
-
-// const person = {
-//     name: 'John Doe',
-//     age: 30,
-//     email: 'john.doe@example.com',
-//     country: 'USA'
-// };
-
-// const {name, age, ...rest} = person;
-// console.log(name);
-// console.log(age);
-// console.log(rest);
-
-// try {
-//     console.log(undefinedVar);
-// } catch (error) {
-//     console.error("This variable not find!", error.message);
-// }
-
-// function processData() {
-//     try {
-//         console.log("Processing data");
-//     } catch(error) {
-//         console.error("Error", error.message);
-//     } finally {
-//         console.log("Cleanup resources");
-//     }
-// }
-    
-//     processData();
-
-// function ceilAndFloor(num) {
-//     //TODO:
-//     return { ceil: Math.ceil(num), floor: Math.floor(num) };
-// }
-
-// console.log(ceilAndFloor(1.4568));
-
-// function areFloatsEqual(num1, num2) {
-//         if(Math.abs(num1 - num2) < 0.00001) {
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     console.log(areFloatsEqual(1.00000001, 1.00000002));
-
-// function getCurrentDateTime() {
-//     let nowDate = new Date();
-//     return nowDate.toISOString();
-// }
-
-// console.log(getCurrentDateTime());
-
-// function setAndGetDateComponents() {
-    
-//     let date = new Date();
-    
-//     date.setDate(15);
-//     date.setMonth(0);
-//     date.setFullYear(2025);
-    
-//     date.setHours(12);
-//     date.setMinutes(30);
-//     date.setSeconds(45);
-    
-//     return {
-//         year: date.getFullYear(),
-//         month: date.getMonth(), // Январь - это 0
-//         day: date.getDate(),
-//         hours: date.getHours(),
-//         minutes: date.getMinutes(),
-//         seconds: date.getSeconds()
-//     };
-// }
-
-// console.log(setAndGetDateComponents());
-
-// function highlight(strings, ...values) {
-//     // Собираем строку из строковых частей и значений
-//     return strings.reduce((result, str, i) =>
-//       `${result}${str}${values[i] !== undefined ? `<strong>${values[i]}</srtong>` : ''}`, '');
-//   }
-  
-//   const name = 'Alice';
-//   const hobby = 'coding';
-//   const message = highlight`My name is ${name} and I love ${hobby}.`;
-  
-//   console.log(message);
-  // Результат: "My name is <strong>Alice</strong> and I love <strong>coding</strong>."
-  
-  
-//   function highlight(strings, ...values) {
-//     return strings.reduce((result, str, i) =>
-//       `${result}${str}${values[i] !== undefined ? `<strong>${values[i]}</strong>` : ''}`, '');
-//   }
-  
-//   const name = 'Alice';
-//   const hobby = 'coding';
-//   const message = highlight`My name is ${name} and I love ${hobby}.`;
-  
-//   console.log(message);
-  
-
-
-//    function highlight(strings, ...values) {
-
-//      return strings.reduce((result, str, i) =>
-//        `${result}${str}<span>${values[i] || ''}</span>`, '');
-//    }
-  
-//    const name = 'Alice';
-//    const hobby = 'coding';
-//    const message = highlight`My name is ${name} and I love ${hobby}.`;
-  
-//    console.log(message);
-// "My name is <span class="highlight">Carol</span> and I love <span class="highlight">painting</span>."
-
-// function createMathMessage(x, y) {
-//     //Сумма X и Y равна Z
-//     let sum = 0;
-//     return `Сумма ${x} и ${y} равна ${sum = x + y}`;
-// }
-
-// console.log(createMathMessage(250 , 2));
-  
-// function createMathMessage(x, y) {
-//     let sum = x + y;
-//     return `Сумма ${x} и ${y} равна ${sum}`;
-// }
-
-// console.log(createMathMessage(250 , 2));
-
-// function bold(strings, ...values) {
-//     return strings.reduce((result, str, i) => `${result}${str}${values[i] !== undefined ? `<b>${values[i]}</b>` : ""}`, "");    
-// }
-    
-//     // Пример вызова функции
-//     const name = "John";
-//     const age = 30;
-//     const result = bold`Name: ${name}, Age: ${age}`;
-    
-//     console.log(result);  // Вывод: Name: <b>John</b>, Age: <b>30</b>
-
-// function greet() {
-//     return console.log("Hello world!");
-// }
-
-// let interval = setInterval(greet, 1000);
-
-// setTimeout(() => {
-//     clearInterval(interval);
-//     console.log("Clear interval");
-// }, 4000);
-
-function delayedMessage(message, delay) {
-        setTimeout(() => {console.log(message)}, delay);
-    }
-
-    delayedMessage("Hello world! Hello earth!!!", 1500);
+const numbers = [2, 4, 6, 8, 10];
+let hasEven = numbers.every(num => num % 2 === 0);
+console.log(hasEven);
