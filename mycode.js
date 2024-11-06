@@ -1,16 +1,31 @@
-class User {
-    constructor(username, email) {
-        this.username = username;
-        this.email = email;
+class Person {
+    #name;
+    #age;
+
+    getName() {
+        return this.#name;
     }
 
-    static fromObject(obj) {
-        return new User(obj.username, obj.email);
+    getAge() {
+        return this.#age;
+    }
+
+    setName(name) {
+        this.#name = name;
+    }
+
+    setAge(age) {
+        this.#age = age;
     }
 }
 
-// Демонстрация работы метода fromObject с тестовыми данными
-const testObj = { username: 'john_doe', email: 'john.doe@example.com' };
-const newUser = User.fromObject(testObj);
+// Создаем экземпляр класса Person
+let person = new Person();
+person.setName("Evgeniy");
+person.setAge(44);
+console.log(person.getName());
+console.log(person.getAge());
 
-console.log(newUser); // User { username: 'john_doe', email: 'john.doe@example.com' }
+// Попытка доступа к приватным полям извне класса
+// console.log(person.#name); // Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
+// console.log(person.#age);  // Uncaught SyntaxError: Private field '#age' must be declared in an enclosing class
