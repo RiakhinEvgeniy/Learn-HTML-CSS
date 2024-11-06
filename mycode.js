@@ -1,12 +1,16 @@
-class MathHelper {
-    static subtract(a, b) {
-        return a - b;
+class User {
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
     }
 
-    static divide(a, b) {
-        return a / b; 
+    static fromObject(obj) {
+        return new User(obj.username, obj.email);
     }
 }
 
-console.log(MathHelper.subtract(100, 50));
-console.log(MathHelper.divide(21, 7));
+// Демонстрация работы метода fromObject с тестовыми данными
+const testObj = { username: 'john_doe', email: 'john.doe@example.com' };
+const newUser = User.fromObject(testObj);
+
+console.log(newUser); // User { username: 'john_doe', email: 'john.doe@example.com' }
