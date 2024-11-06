@@ -1,7 +1,21 @@
-Array.prototype.sum = function() {
-    return this.reduce((res, num) => res + num, 0);
+class User {
+    username;
+    email;
+
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    getUsername() {
+        return this.username;
+    }
+
+    getEmail() {
+        return this.email;
+    }
 }
 
-let numbers = [1, 2, 3, 4, 5];
-
-console.log(numbers.sum()); // 15
+let person = new User("Evgeniy", "evgeniiyr.e.u@gmail.com");
+console.log(person.getUsername());
+console.log(person.getEmail());
