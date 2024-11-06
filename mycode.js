@@ -1,31 +1,30 @@
-class Person {
-    #name;
-    #age;
+class Car {
+    #brand;
+    #model;
 
-    getName() {
-        return this.#name;
+    setBrand(brand) {
+        this.#brand = brand;
+        this.#logChange("Brend", this.#brand);
     }
 
-    getAge() {
-        return this.#age;
+    setModel(model) {
+        this.#model = model;
+        this.#logChange("Model", this.#model);
     }
 
-    setName(name) {
-        this.#name = name;
+    getBrand() {
+        return this.#brand;
     }
 
-    setAge(age) {
-        this.#age = age;
+    getModel() {
+        return this.#model;
+    }
+
+    #logChange(brend, model) {
+        console.log(`${brend} ${model}`);
     }
 }
 
-// Создаем экземпляр класса Person
-let person = new Person();
-person.setName("Evgeniy");
-person.setAge(44);
-console.log(person.getName());
-console.log(person.getAge());
-
-// Попытка доступа к приватным полям извне класса
-// console.log(person.#name); // Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
-// console.log(person.#age);  // Uncaught SyntaxError: Private field '#age' must be declared in an enclosing class
+let myCar = new Car();
+myCar.setBrand("VW");
+myCar.setModel("CADDY");
