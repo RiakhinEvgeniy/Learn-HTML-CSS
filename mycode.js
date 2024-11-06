@@ -1,24 +1,25 @@
-class Product {
-    constructor(name, price) {
+class Library {
+
+    books = [];
+
+    constructor(name) {
         this.name = name;
-        this.price = price;
     }
 
-    getName() {
-        return this.name;
+    addBook(nameOfBook) {
+        this.books.push(nameOfBook);
     }
 
-    getPrice() {
-        return this.price;
+    listBooks() {
+        return this.books;
     }
 }
 
-let banan = new Product("Banan", 100);
-let apple = new Product("Apple", 250);
-let tomate = new Product("Tomate", 120);
+// Пример использования и тестирования
+const myLibrary = new Library('My Library');
 
-console.log(banan.getName());
-console.log(banan.getPrice());
-console.log(apple.getName());
-console.log(apple.getPrice());
-console.log(tomate.getName());
+myLibrary.addBook('To Kill a Mockingbird');
+myLibrary.addBook('1984');
+myLibrary.addBook('The Great Gatsby');
+
+console.log(myLibrary.listBooks()); // ['To Kill a Mockingbird', '1984', 'The Great Gatsby']
