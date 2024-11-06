@@ -1,21 +1,27 @@
-class Employee {
-    constructor(name, salary) {
+// Объявление класса Animal
+class Animal {
+    constructor(name) {
         this.name = name;
-        this.salary = salary;
+    }
+
+    speak() {
+        return console.log(`${this.name} makes a noise`);
     }
 }
 
-class Manager extends Employee {
-    constructor(name, salary, department) {
-        super(name, salary);
-        this.department = department;
+class Predator extends Animal {
+    constructor(name) {
+        super(name);
+    }
+
+    hunt() {
+        return console.log(`${this.name} is hunting`)
     }
 }
 
-// Создание экземпляра класса Employee
-const employee = new Employee("John Doe", 50000);
-console.log(`Employee Name: ${employee.name}, Salary: ${employee.salary}`);
+// Создание экземпляра класса Predator
+let predator = new Predator("Lion");
 
-// Создание экземпляра класса Manager
-const manager = new Manager("Jane Doe", 70000, "Sales");
-console.log(`Manager Name: ${manager.name}, Salary: ${manager.salary}, Department: ${manager.department}`);
+// Вызов методов speak и hunt для экземпляра класса Predator
+predator.speak(); // Вывод: Lion makes a noise.
+predator.hunt();  // Вывод: Lion is hunting.
