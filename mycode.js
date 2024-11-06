@@ -1,21 +1,24 @@
-class User {
-    username;
-    email;
-
-    constructor(username, email) {
-        this.username = username;
-        this.email = email;
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
     }
 
-    getUsername() {
-        return this.username;
+    getName() {
+        return this.name;
     }
 
-    getEmail() {
-        return this.email;
+    getPrice() {
+        return this.price;
     }
 }
 
-let person = new User("Evgeniy", "evgeniiyr.e.u@gmail.com");
-console.log(person.getUsername());
-console.log(person.getEmail());
+let banan = new Product("Banan", 100);
+let apple = new Product("Apple", 250);
+let tomate = new Product("Tomate", 120);
+
+console.log(banan.getName());
+console.log(banan.getPrice());
+console.log(apple.getName());
+console.log(apple.getPrice());
+console.log(tomate.getName());
