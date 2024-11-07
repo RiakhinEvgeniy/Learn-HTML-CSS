@@ -1,26 +1,54 @@
-// Функция canRun, добавляющая метод run
-function canRun(o) {
-    o.run = function() {
-        console.log("Running...");
+class User {
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    login() {
+        console.log(`${this.username} has logged in`);
+    }
+
+    logout() {
+        console.log(`${this.username} has logged out`);
     }
 }
 
-// Функция canJump, добавляющая метод jump
-function canJump(o) {
-    o.jump = function() {
-        console.log("Jumping...");
+class Admin extends User{
+    constructor(adminname, email) {
+        super(adminname, email);
+        this.adminname = adminname;
+        this.email = email;
+    }
+
+    deleteUser(user) {
+        console.log(`${this.adminname} deleted user ${user.username}`);
     }
 }
 
-// Функция-конструктор Athlete
-function Athlete() {}
+class Guest extends User{
 
-// Создание объекта athlete
-const athlete = new Athlete();
+    constructor(guestname, email) {
+        super(guestname, email)
+        this.guestname = guestname;
+        this.email = email;
+    }
 
-canRun(athlete);
-canJump(athlete);
+    requestAccess() {
+        console.log(`${this.guestname} has requested access`)
+    }
+}
 
-// Демонстрация методов run и jump
-athlete.run(); // Вывод: Running...
-athlete.jump(); // Вывод: Jumping...
+// Демонстрация работы
+const user = new User('user1', 'user1@example.com');
+user.login();  // вывод: user1 has logged in
+user.logout(); // вывод: user1 has logged out
+
+const admin = new Admin('admin1', 'admin1@example.com');
+admin.login();  // вывод: admin1 has logged in
+admin.deleteUser(user); // вывод: admin1 deleted user user1
+admin.logout(); // вывод: admin1 has logged out
+
+const guest = new Guest('guest1', 'guest1@example.com');
+guest.login();  // вывод: guest1 has logged in
+guest.requestAccess(); // вывод: guest1 has requested access
+guest.logout(); // вывод: guest1 has logged out
