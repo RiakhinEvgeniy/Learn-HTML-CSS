@@ -1,16 +1,17 @@
-class Calculator {
-    add(x, y) {
-        if(typeof x === "number" && typeof y === "number") {
-            return x + y;
-        } else if(Array.isArray(x) && Array.isArray(y)) {
-            return x.concat(y);
-        }
-        else {
-            throw new Error("Invalid arguments!");
-        }
+let CanSwim = {
+    swim: function() {
+        console.log("Swiming...");
     }
 }
 
-let calc = new Calculator();
-console.log(calc.add(5, 50));
-console.log(calc.add([1, 2, 3], [4, 5, 6]));
+let CanFly = {
+    fly: function() {
+        console.log("Flying...");
+    }
+}
+
+class Bird {};
+Object.assign(Bird.prototype, CanSwim, CanFly);
+let bird = new Bird();
+bird.swim();
+bird.fly();
