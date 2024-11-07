@@ -1,30 +1,27 @@
-class Car {
-    #brand;
-    #model;
-
-    setBrand(brand) {
-        this.#brand = brand;
-        this.#logChange("Brend", this.#brand);
-    }
-
-    setModel(model) {
-        this.#model = model;
-        this.#logChange("Model", this.#model);
-    }
-
-    getBrand() {
-        return this.#brand;
-    }
-
-    getModel() {
-        return this.#model;
-    }
-
-    #logChange(brend, model) {
-        console.log(`${brend} ${model}`);
+class Animal {
+    makeSound() {
+        console.log("Something say")
     }
 }
 
-let myCar = new Car();
-myCar.setBrand("VW");
-myCar.setModel("CADDY");
+class Dog extends Animal {
+    makeSound() {
+        console.log("Woof! Woof!");
+    }
+}
+
+class Cat extends Animal{
+    makeSound() {
+        console.log("Meow! Meow!");
+    }
+}
+
+function playWithAnimal(animal) {
+    animal.makeSound();
+}
+
+let myDog = new Dog();
+let myCat = new Cat();
+
+playWithAnimal(myDog);
+playWithAnimal(myCat);
