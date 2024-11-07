@@ -1,17 +1,26 @@
-let CanSwim = {
-    swim: function() {
-        console.log("Swiming...");
+// Функция canRun, добавляющая метод run
+function canRun(o) {
+    o.run = function() {
+        console.log("Running...");
     }
 }
 
-let CanFly = {
-    fly: function() {
-        console.log("Flying...");
+// Функция canJump, добавляющая метод jump
+function canJump(o) {
+    o.jump = function() {
+        console.log("Jumping...");
     }
 }
 
-class Bird {};
-Object.assign(Bird.prototype, CanSwim, CanFly);
-let bird = new Bird();
-bird.swim();
-bird.fly();
+// Функция-конструктор Athlete
+function Athlete() {}
+
+// Создание объекта athlete
+const athlete = new Athlete();
+
+canRun(athlete);
+canJump(athlete);
+
+// Демонстрация методов run и jump
+athlete.run(); // Вывод: Running...
+athlete.jump(); // Вывод: Jumping...
