@@ -1,27 +1,16 @@
-class Animal {
-    makeSound() {
-        console.log("Something say")
+class Calculator {
+    add(x, y) {
+        if(typeof x === "number" && typeof y === "number") {
+            return x + y;
+        } else if(Array.isArray(x) && Array.isArray(y)) {
+            return x.concat(y);
+        }
+        else {
+            throw new Error("Invalid arguments!");
+        }
     }
 }
 
-class Dog extends Animal {
-    makeSound() {
-        console.log("Woof! Woof!");
-    }
-}
-
-class Cat extends Animal{
-    makeSound() {
-        console.log("Meow! Meow!");
-    }
-}
-
-function playWithAnimal(animal) {
-    animal.makeSound();
-}
-
-let myDog = new Dog();
-let myCat = new Cat();
-
-playWithAnimal(myDog);
-playWithAnimal(myCat);
+let calc = new Calculator();
+console.log(calc.add(5, 50));
+console.log(calc.add([1, 2, 3], [4, 5, 6]));
