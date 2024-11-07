@@ -1,54 +1,39 @@
-class User {
-    constructor(username, email) {
-        this.username = username;
-        this.email = email;
+class LibraryItem {
+    constructor(title, year) {
+        this.title = title;
+        this.year = year;
     }
 
-    login() {
-        console.log(`${this.username} has logged in`);
-    }
-
-    logout() {
-        console.log(`${this.username} has logged out`);
+    display() {
+        console.log(`Title: ${this.title}, Year: ${this.year}`);
     }
 }
 
-class Admin extends User{
-    constructor(adminname, email) {
-        super(adminname, email);
-        this.adminname = adminname;
-        this.email = email;
+class Book extends LibraryItem {
+    constructor(title, year, author) {
+        super(title, year);
+        this.author = author;
     }
 
-    deleteUser(user) {
-        console.log(`${this.adminname} deleted user ${user.username}`);
-    }
-}
-
-class Guest extends User{
-
-    constructor(guestname, email) {
-        super(guestname, email)
-        this.guestname = guestname;
-        this.email = email;
-    }
-
-    requestAccess() {
-        console.log(`${this.guestname} has requested access`)
+    display() {
+        console.log(`Title: ${this.title}, Year: ${this.year}, Author: ${this.author}`);
     }
 }
 
-// Демонстрация работы
-const user = new User('user1', 'user1@example.com');
-user.login();  // вывод: user1 has logged in
-user.logout(); // вывод: user1 has logged out
+class Magazine extends LibraryItem{
+    constructor(title, year, issue) {
+        super(title, year);
+        this.issue = issue;
+    }
 
-const admin = new Admin('admin1', 'admin1@example.com');
-admin.login();  // вывод: admin1 has logged in
-admin.deleteUser(user); // вывод: admin1 deleted user user1
-admin.logout(); // вывод: admin1 has logged out
+    display() {
+        console.log(`Title: ${this.title}, Year: ${this.year}, Issue Number: ${this.issue}`);
+    }
+}
 
-const guest = new Guest('guest1', 'guest1@example.com');
-guest.login();  // вывод: guest1 has logged in
-guest.requestAccess(); // вывод: guest1 has requested access
-guest.logout(); // вывод: guest1 has logged out
+// Демонстрация работы методов:
+const book = new Book("JavaScript: The Good Parts", 2008, "Douglas Crockford");
+const magazine = new Magazine("National Geographic", 2021, 12);
+
+book.display();  // Title: JavaScript: The Good Parts, Year: 2008, Author: Douglas Crockford
+magazine.display();  // Title: National Geographic, Year: 2021, Issue Number: 12
