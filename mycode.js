@@ -1,4 +1,4 @@
-let tagP = document.querySelector("p");
-console.log(tagP.nodeName);
-console.log(tagP.nodeType);
-console.log(tagP.textContent);
+let elementUl = document.getElementById("myList");
+console.log(elementUl.innerHTML);
+elementUl.innerHTML += "<li>New Item</li>";
+console.log(elementUl.innerHTML);
