@@ -1,7 +1,5 @@
-window.addEventListener('load', function(varLoad) {
-    console.log(`Loading in ${varLoad.timeStamp} happened`);
-});
-
-document.addEventListener('DOMContentLoaded', (contentLoad) => {
-    console.log(`Content load in ${contentLoad.timeStamp} happened`);
+let link = document.getElementById('myLink');
+link.addEventListener('click', function(event) {
+    console.log('Переход по ссылке отменен')
+    event.preventDefault()
 });
