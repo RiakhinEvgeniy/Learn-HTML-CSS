@@ -1,11 +1,12 @@
-let btn = document.getElementById('saveButton');
-let dataSaved = new CustomEvent('dataSaved', {detail: 'Data has been saved successfully'})
+let elDivById = document.getElementById('textContainer')
+let btn = document.getElementById('updateButton')
 
-btn.addEventListener('dataSaved', (event) => {
-    console.log(event.detail);
+let updateText = new CustomEvent('updateText', {detail: 'Updated text'})
+
+elDivById.addEventListener('updateText', function(event) {
+    elDivById.textContent = event.detail;
 })
 
-btn.addEventListener('click', function() {
-    btn.dispatchEvent(dataSaved);
-});
-
+btn.addEventListener('click', () => {
+    elDivById.dispatchEvent(updateText)
+})
