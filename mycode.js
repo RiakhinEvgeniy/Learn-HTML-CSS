@@ -1,5 +1,11 @@
-let link = document.getElementById('myLink');
-link.addEventListener('click', function(event) {
-    console.log('Переход по ссылке отменен')
-    event.preventDefault()
+let elDiv = document.getElementById('container');
+let btn = document.getElementById('button');
+
+elDiv.addEventListener('click', function() {
+    console.log('Клик внутри div');
+});
+
+btn.addEventListener('click', function(event) {
+    console.log('Кнопка нажата');
+    event.stopPropagation();
 });
