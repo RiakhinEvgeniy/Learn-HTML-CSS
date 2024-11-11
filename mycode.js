@@ -1,12 +1,9 @@
-let elDivById = document.getElementById('textContainer')
-let btn = document.getElementById('updateButton')
+let updateText = new CustomEvent('updateText', {detail: 'Updated text55555555'});
 
-let updateText = new CustomEvent('updateText', {detail: 'Updated text'})
+document.getElementById('textContainer').addEventListener('updateText', function(event) {
+    this.textContent = event.detail;
+});
 
-elDivById.addEventListener('updateText', function(event) {
-    elDivById.textContent = event.detail;
-})
-
-btn.addEventListener('click', () => {
-    elDivById.dispatchEvent(updateText)
-})
+document.getElementById('updateButton').addEventListener('click', () => {
+    document.getElementById('textContainer').dispatchEvent(updateText);;
+});
