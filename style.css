@@ -1,13 +1,5 @@
-#container {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#button {
+#saveButton {
     padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
 }

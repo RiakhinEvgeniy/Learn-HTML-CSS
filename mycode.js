@@ -1,11 +1,11 @@
-let elDiv = document.getElementById('container');
-let btn = document.getElementById('button');
+let btn = document.getElementById('saveButton');
+let dataSaved = new CustomEvent('dataSaved', {detail: 'Data has been saved successfully'})
 
-elDiv.addEventListener('click', function() {
-    console.log('Клик внутри div');
+btn.addEventListener('dataSaved', (event) => {
+    console.log(event.detail);
+})
+
+btn.addEventListener('click', function() {
+    btn.dispatchEvent(dataSaved);
 });
 
-btn.addEventListener('click', function(event) {
-    console.log('Кнопка нажата');
-    event.stopPropagation();
-});
