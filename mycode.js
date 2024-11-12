@@ -1,9 +1,23 @@
-let updateText = new CustomEvent('updateText', {detail: 'Updated text55555555'});
+const input = document.getElementById('search-input');
+const resultsDiv = document.getElementById('results');
 
-document.getElementById('textContainer').addEventListener('updateText', function(event) {
-    this.textContent = event.detail;
-});
+input.addEventListener('input', (e) => {
 
-document.getElementById('updateButton').addEventListener('click', () => {
-    document.getElementById('textContainer').dispatchEvent(updateText);;
-});
+    debounceInputSearch(e.target.value);
+})
+
+let debounceInputSearch = debounceSearch(text => {
+    resultsDiv.textContent = text;
+}, 1000);
+
+function debounceSearch(func, delay = 300) {
+    let timeout;
+
+    return (args) => {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            func(args);
+        }, delay);
+    }
+}
