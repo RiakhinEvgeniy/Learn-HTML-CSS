@@ -1,6 +1,12 @@
-#results {
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
+#scroll-container {
     width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+}
+#content {
+    height: 1000px;
+}
+#status {
+    margin-top: 10px;
 }
