@@ -1,12 +1,19 @@
-const canvas = document.getElementById('myCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Рисование синего прямоугольника
-        ctx.fillStyle = 'blue'
-        ctx.fillRect(10, 10, 150, 100);
+const canvas = document.getElementById('animationCanvas');
+const ctx = canvas.getContext('2d');
 
-        // Рисование зеленого круга
-        ctx.beginPath();
-        ctx.arc(300, 75, 50, 0, Math.PI * 2);
-        ctx.fillStyle = 'red'
-        ctx.fill();
+let x = 0
+let y = 0
+
+function flyRectangle() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = 'blue'
+      ctx.fillRect(x, y, 50, 50);
+
+      x += 2;
+      y += 2;
+
+      requestAnimationFrame(flyRectangle);
+}
+
+flyRectangle();
