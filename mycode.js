@@ -1,23 +1,28 @@
-function performTask() {
-      return new Promise((resolve, reject) => {
+function loadImage() {
+      return new Promise((resolve) => {
             setTimeout(() => {
-                  let randomNumber = Math.random() > 0.5;
-                  if(randomNumber) {
-                        resolve('Task completed successfully');
-                  } else {
-                        reject('Task failed');
-                  }
-            }, 2000);
+                  resolve('Loaded image.');
+            }, 1000)
+
       })
 }
 
-performTask()
-  .then(message => {
-    console.log(message);
-  })
-  .catch(error => {
-    console.error(error);
-  })
-  .finally(() => {
-    console.log("Task is completed");
-  });
+//loadData
+function loadData() {
+      return new Promise((resolve) => {
+            setTimeout(() => {
+                  resolve('Loaded data.');
+            }, 2000)
+
+      })
+}
+
+//All resources loaded
+Promise.all([loadImage(), loadData()])
+.then(res => {
+      console.log('All resources loaded');
+      console.log(res);
+})
+.catch(error => {
+      console.log(error);
+});
