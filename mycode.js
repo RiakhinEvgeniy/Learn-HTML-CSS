@@ -1,23 +1,23 @@
-const myPromise = new Promise((resolve, reject) => {
-      // Симулируем асинхронную операцию
-      setTimeout(() => {
-          const success = false; // Попробуйте поменять на false для теста reject
-          if (success) {
-              resolve("Операция завершена успешно!");
-          } else {
-              reject("Произошла ошибка!");
-          }
-      }, 1000);
-  });
+function fetchData(data) {
+      return new Promise((resolve) => {
+            setTimeout(() => {
+                  resolve(data);
+            }, 1000)
+      })
+}
 
-  myPromise
-  .then((res) => {
+fetchData('Data 1')
+.then((res) => {
       console.log(res);
-  })
-  .catch((error) => {
-      console.log(error);
-  })
-  .finally(() => {
-      console.log('Finally!');
-  })
-  
+      return fetchData('Data 2');
+})
+.then((res) => {
+      console.log(res);
+      return fetchData('Data 3')
+})
+ .then((res) => {
+      console.log(res);
+ })
+ .catch((error) => {
+      console.log(error)
+ })
