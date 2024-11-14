@@ -10,17 +10,19 @@ function loadResource(step, load = true) {
       })
 }
 
-loadResource('Step 1', true)
-.then((result) => {
+loadResource('Step 1')
+.then(async (result) => {
       console.log(result);
-      return loadResource('Step 2', false).catch((error) => {
+      try {
+            return await loadResource('Step 2', false);
+      } catch (error) {
             console.warn(error);
-            return 'Handled error'
-      })
+            return 'Handled error';
+      }
 })
 .then((result) => {
       console.log(result);
-      return loadResource('Step 3', true);
+      return loadResource('Step 3');
 })
 .finally(() => {
       console.log('Finally complited')
