@@ -1,19 +1,20 @@
-const canvas = document.getElementById('animationCanvas');
-const ctx = canvas.getContext('2d');
-
-let x = 0
-let y = 0
-
-function flyRectangle() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = 'blue'
-      ctx.fillRect(x, y, 50, 50);
-
-      x += 2;
-      y += 2;
-
-      requestAnimationFrame(flyRectangle);
-}
-
-flyRectangle();
+function runTimers() {
+      
+      setTimeout(() => {
+            console.log('Привет!');
+      }, 3000);
+  
+      let countSeconds = 0;
+      
+      let interval = setInterval(() => {
+            let time = new Date().toLocaleTimeString();
+            console.log(`${time}`);
+            countSeconds++;
+            if(countSeconds >= 10){
+                  clearInterval(interval);
+            }
+            
+      }, 1000)
+  }
+  
+  runTimers();
