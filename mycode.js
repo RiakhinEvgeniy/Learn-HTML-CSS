@@ -1,23 +1,27 @@
-function fetchData(data) {
-      return new Promise((resolve) => {
+function loadResource(step, load = true) {
+      return new Promise((resolve, reject) => {
             setTimeout(() => {
-                  resolve(data);
-            }, 1000)
+                  if(load) {
+                        resolve(`${step} completed.`);
+                  } else {
+                        reject(`${step} faild`);
+                  }
+            }, 500)
       })
 }
 
-fetchData('Data 1')
-.then((res) => {
-      console.log(res);
-      return fetchData('Data 2');
+loadResource('Step 1', true)
+.then((result) => {
+      console.log(result);
+      return loadResource('Step 2', false).catch((error) => {
+            console.warn(error);
+            return 'Handled error'
+      })
 })
-.then((res) => {
-      console.log(res);
-      return fetchData('Data 3')
+.then((result) => {
+      console.log(result);
+      return loadResource('Step 3', true);
 })
- .then((res) => {
-      console.log(res);
- })
- .catch((error) => {
-      console.log(error)
- })
+.finally(() => {
+      console.log('Finally complited')
+})
