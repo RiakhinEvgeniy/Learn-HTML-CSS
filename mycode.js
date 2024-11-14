@@ -1,20 +1,11 @@
-function runTimers() {
-      
-      setTimeout(() => {
-            console.log('Привет!');
-      }, 3000);
-  
-      let countSeconds = 0;
-      
-      let interval = setInterval(() => {
-            let time = new Date().toLocaleTimeString();
-            console.log(`${time}`);
-            countSeconds++;
-            if(countSeconds >= 10){
-                  clearInterval(interval);
-            }
-            
-      }, 1000)
-  }
-  
-  runTimers();
+// Синхронная операция
+console.log('Console1')
+
+// Асинхронная операция через Promise
+Promise.resolve().then(() => console.log('Promice1'))
+
+// Синхронная операция
+console.log('Console2')
+
+// Асинхронная операция через setTimeout
+setTimeout(() => console.log('Set Timeout'))
