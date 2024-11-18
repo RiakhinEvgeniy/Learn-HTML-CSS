@@ -1,10 +1,16 @@
-async function delayedMessage(params, delay = 1000) {
-      return new Promise((resolve) => setTimeout(() => resolve(params), delay));
-}
-
-async function displayFunc() {
-      let display = await delayedMessage('Hello world!', 1000);
-      console.log(display);
-}
-
-displayFunc();
+function loadResource1() {
+            return new Promise((resolve) => setTimeout(() => resolve('Data 1'), 2000));
+      }
+      
+      function loadResource2() {
+            return new Promise((resolve) => setTimeout(() => resolve('Data 2'), 3000));
+      }
+      
+      async function loadAllResources() {
+            let [data1, data2] = await Promise.all([loadResource1(), loadResource2()]);
+            console.log(data1);
+            console.log(data2);
+      }
+      
+      // Запуск функции для демонстрации
+      loadAllResources();
