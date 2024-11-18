@@ -1,29 +1,10 @@
-function loadResource(step, load = true) {
-      return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                  if(load) {
-                        resolve(`${step} completed.`);
-                  } else {
-                        reject(`${step} faild`);
-                  }
-            }, 500)
-      })
+async function delayedMessage(params, delay = 1000) {
+      return new Promise((resolve) => setTimeout(() => resolve(params), delay));
 }
 
-loadResource('Step 1')
-.then(async (result) => {
-      console.log(result);
-      try {
-            return await loadResource('Step 2', false);
-      } catch (error) {
-            console.warn(error);
-            return 'Handled error';
-      }
-})
-.then((result) => {
-      console.log(result);
-      return loadResource('Step 3');
-})
-.finally(() => {
-      console.log('Finally complited')
-})
+async function displayFunc() {
+      let display = await delayedMessage('Hello world!', 1000);
+      console.log(display);
+}
+
+displayFunc();
