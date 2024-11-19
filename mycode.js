@@ -1,17 +1,22 @@
-// Подключение библиотеки Axios
-const axios = require('axios');
+async function postData() {
+  const url = 'https://jsonplaceholder.typicode.com/posts';
+  const data = {
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+  };
 
-// Определение функции fetchTodo
-const fetchTodo = () => {
-    let url = 'https://jsonplaceholder.typicode.com/todos/1'
-    axios.get(url)
-    .then((response) => {
-      console.log(response.data)
-    })
-    .catch((error) => {
-      console.log('Error response', error);
-    })
-};
+  //TODO:
+  let resp = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  });
 
-// Вызов функции
-fetchTodo();
+  let result = await resp.json();
+  console.log(result);
+}
+
+postData();
