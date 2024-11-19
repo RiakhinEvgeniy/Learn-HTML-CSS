@@ -1,13 +1,13 @@
 let axios = require('axios');
 
-let createPost = async (data) => {
+let updatePost = async (data) => {
   try {
-    let url = 'https://jsonplaceholder.typicode.com/posts'
-    let response = await axios.post(url, data);
+    let url = 'https://jsonplaceholder.typicode.com/posts/1'
+    let response = await axios.put(url, data);
     console.log(response.data);
   } catch(error) {
-    console.error('Error', error);
+    console.error(error);
   }
 }
 
-createPost({title: 'New Post', body: 'This is a new post', userId: 1});
+updatePost({title: 'Updated Post', body: 'This post has been updated', userId: 1});
