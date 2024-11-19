@@ -1,22 +1,13 @@
-async function postData() {
-  const url = 'https://jsonplaceholder.typicode.com/posts';
-  const data = {
-    title: 'foo',
-    body: 'bar',
-    userId: 1
-  };
+let axios = require('axios');
 
-  //TODO:
-  let resp = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  });
-
-  let result = await resp.json();
-  console.log(result);
+let createPost = async (data) => {
+  try {
+    let url = 'https://jsonplaceholder.typicode.com/posts'
+    let response = await axios.post(url, data);
+    console.log(response.data);
+  } catch(error) {
+    console.error('Error', error);
+  }
 }
 
-postData();
+createPost({title: 'New Post', body: 'This is a new post', userId: 1});
