@@ -1,18 +1,17 @@
-fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        title: 'foo',
-        body: 'bar',
-        userId: 1
-      })
+// Подключение библиотеки Axios
+const axios = require('axios');
+
+// Определение функции fetchTodo
+const fetchTodo = () => {
+    let url = 'https://jsonplaceholder.typicode.com/todos/1'
+    axios.get(url)
+    .then((response) => {
+      console.log(response.data)
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Ошибка при выполнении запроса: ', error);
-      });
+    .catch((error) => {
+      console.log('Error response', error);
+    })
+};
+
+// Вызов функции
+fetchTodo();
