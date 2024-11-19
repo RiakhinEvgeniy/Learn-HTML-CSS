@@ -1,16 +1,18 @@
-function loadResource1() {
-            return new Promise((resolve) => setTimeout(() => resolve('Data 1'), 2000));
-      }
-      
-      function loadResource2() {
-            return new Promise((resolve) => setTimeout(() => resolve('Data 2'), 3000));
-      }
-      
-      async function loadAllResources() {
-            let [data1, data2] = await Promise.all([loadResource1(), loadResource2()]);
-            console.log(data1);
-            console.log(data2);
-      }
-      
-      // Запуск функции для демонстрации
-      loadAllResources();
+fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: 1
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Ошибка при выполнении запроса: ', error);
+      });
