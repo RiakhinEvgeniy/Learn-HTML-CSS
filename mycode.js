@@ -1,21 +1,21 @@
-// Установка глобального обработчика ошибок для window.onerror
-window.onerror = function(message, source, lineno, colno, error) {
-  console.error(`Ошибка: ${message} в ${source}:${lineno}:${colno}`, error);
-};
-
-// Установка глобального обработчика ошибок для window.onunhandledrejection
-window.onunhandledrejection = function (event) {
-  console.error(event.reason);
+// Конструктор Animal
+function Animal(name, species) {
+    this.name = name;
+    this.species = species;
 }
 
-// Асинхронная функция, которая генерирует ошибку через 1 секунду
-async function generateErr() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  throw new Error('Error from generateERR');
-};
+// Конструктор Dog, который наследует свойства от Animal с использованием call
+function Dog(name, species) {
+    Animal.call(this, name, species);
+}
 
-// Создание отклоненного промиса
+// Добавление метода bark в конструктор Dog
+Dog.prototype.bark = function() {
+    console.log(`Woof! I'm ${this.name}, the ${this.species}`);
+}
 
-Promise.reject(new Error('Errors from Promice reject'));
-// Вызов асинхронной функции для генерации ошибки
-let e = generateErr();
+// Создание экземпляра Dog
+const myDog = new Dog('Buddy', 'dog');
+
+// Проверка работы метода bark
+myDog.bark(); // Вывод: "Woof! I'm Buddy, the dog"
