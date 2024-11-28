@@ -1,6 +1,23 @@
-function maxOfArray(numbers) {
-    return Math.max.apply(null, numbers);
+let range = {
+    from: 1,
+    to: 5
+};
+
+range[Symbol.iterator] = function () {
+    return {
+        current: this.from,
+        last: this.to,
+
+        next() {
+            if (this.current <= this.last) {
+                return { done: false, value: this.current++ };
+            } else {
+                return {done: true};
+            }
+        }
     }
-    
-    const testArray = [3, 5, 7, 2, 8];
-    console.log(maxOfArray(testArray)); // Вывод: 8
+};
+
+for (let val of range) {
+    console.log(val);
+}
