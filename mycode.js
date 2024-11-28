@@ -1,23 +1,20 @@
-let range = {
-    from: 1,
-    to: 5
-};
-
-range[Symbol.iterator] = function () {
+function createRangeIterator(start, end) {
     return {
-        current: this.from,
-        last: this.to,
-
         next() {
-            if (this.current <= this.last) {
-                return { done: false, value: this.current++ };
+            if(start <= end) {
+                return { value: start++, done: false };
             } else {
-                return {done: true};
+                return {value: start = undefined, done: true};
             }
         }
-    }
-};
-
-for (let val of range) {
-    console.log(val);
+    };
 }
+
+// Пример использования
+const iterator = createRangeIterator(1, 5);
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: 3, done: false }
+console.log(iterator.next()); // { value: 4, done: false }
+console.log(iterator.next()); // { value: 5, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
