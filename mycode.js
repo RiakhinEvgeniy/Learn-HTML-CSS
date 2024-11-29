@@ -1,16 +1,13 @@
-const myIterable = {
-    n: 14,
-
-    *[Symbol.iterator]() {
-        let x = 0, y = 1;
-        while(x < this.n) {
-            yield x;
-            [x, y] = [y, x + y];
-        }
+function* toUpperCase(array) {
+    for (const item of array) {
+        yield item.toUpperCase();
     }
-
 }
 
-for (const num of myIterable) {
-    console.log(num);
+let arr = ['laptop', 'book', 'pen', 'smartphone'];
+
+let gen = toUpperCase(arr);
+
+for (const element of gen) {
+    console.log(element);
 }
