@@ -1,13 +1,14 @@
-function* toUpperCase(array) {
-    for (const item of array) {
-        yield item.toUpperCase();
+function* iterableObject(o) {
+    let keys = Object.keys(o);
+    for (const key of keys) {
+        yield [key, o[key]]
     }
 }
 
-let arr = ['laptop', 'book', 'pen', 'smartphone'];
+let simpleObject = {name: 'Evgeniy', age: '44', city: 'Wolfsburg', country: 'Germany'}
 
-let gen = toUpperCase(arr);
+let itOb = iterableObject(simpleObject);
 
-for (const element of gen) {
-    console.log(element);
+for (const [key, value] of itOb) {
+    console.log(`${key} -> ${value}`);
 }
