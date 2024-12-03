@@ -1,14 +1,14 @@
-function* iterableObject(o) {
-    let keys = Object.keys(o);
-    for (const key of keys) {
-        yield [key, o[key]]
-    }
+function* sequenceGenerator(start, end) {
+    for (let i = start; i <= end; i++)
+        yield i;
 }
 
-let simpleObject = {name: 'Evgeniy', age: '44', city: 'Wolfsburg', country: 'Germany'}
+// Демонстрация работы генератора
+const generator = sequenceGenerator(1, 5);
 
-let itOb = iterableObject(simpleObject);
-
-for (const [key, value] of itOb) {
-    console.log(`${key} -> ${value}`);
-}
+console.log(generator.next()); // { value: 1, done: false }
+console.log(generator.next()); // { value: 2, done: false }
+console.log(generator.next()); // { value: 3, done: false }
+console.log(generator.next()); // { value: 4, done: false }
+console.log(generator.next()); // { value: 5, done: false }
+console.log(generator.next()); // { value: undefined, done: true }
