@@ -1,14 +1,17 @@
-function* sequenceGenerator(start, end) {
-    for (let i = start; i <= end; i++)
-        yield i;
+function* dynamicUpdateGenerator(initialValue) {
+   let currentValue = initialValue;
+   while(true) {
+    let fromOuter = yield currentValue;
+    currentValue += fromOuter !== undefined ? fromOuter : 0;
+   }
 }
 
-// Демонстрация работы генератора
-const generator = sequenceGenerator(1, 5);
+// Инициализируем генератор с начальным значением 10
+const generator = dynamicUpdateGenerator(10);
 
-console.log(generator.next()); // { value: 1, done: false }
-console.log(generator.next()); // { value: 2, done: false }
-console.log(generator.next()); // { value: 3, done: false }
-console.log(generator.next()); // { value: 4, done: false }
-console.log(generator.next()); // { value: 5, done: false }
-console.log(generator.next()); // { value: undefined, done: true }
+// Демонстрация работы генератора
+console.log(generator.next().value);   // 10
+console.log(generator.next(5).value);  // 15 (10 + 5)
+console.log(generator.next(3).value);  // 18 (15 + 3)
+setTimeout(() => console.log(generator.next(-2).value), 1000); // 16 (18 - 2)
+console.log(generator.next(7).value);  // 23 (16 + 7)
