@@ -10,7 +10,18 @@
 
 <body>
 
-
+    <form id="settingsForm">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username">
+        <div>
+            <label for="theme">Тема:</label>
+            <select id="theme" name="theme">
+                <option value="light">Светлая</option>
+                <option value="dark">Темная</option>
+            </select>
+        </div>
+        <button type="button" id="saveButton">Сохранить</button>
+    </form>
 
     <script src="mycode.js"></script>
 </body>

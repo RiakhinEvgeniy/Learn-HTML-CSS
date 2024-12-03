@@ -1,10 +1,21 @@
-let userRole = new Map();
-userRole.set('Evgeniy', 'ADMIN');
-userRole.set('Nataliy', 'editor');
-userRole.set('Vlad', 'viewer');
-userRole.set('Anna', 'user');
-userRole.set('David', 'manager');
+let saveButton = document.getElementById('saveButton');
+let userName = document.getElementById('username');
+let theme = document.getElementById('theme');
 
-for (const [name, role] of userRole) {
-    console.log(`${name}: ${role}`);
+let savedUserName = localStorage.getItem('userName');
+if(savedUserName) {
+    userName.value = savedUserName;
 }
+
+let savedTheme = localStorage.getItem('theme');
+if(savedTheme) {
+    theme.value = savedTheme;
+    document.body.className = savedTheme;
+}
+
+saveButton.addEventListener('click', () => {
+    let valueInput = userName.value;
+    let valueTheme = theme.value;
+    localStorage.setItem('userName', valueInput);
+    localStorage.setItem('theme', valueTheme);
+});
