@@ -1,17 +1,21 @@
-function* dynamicUpdateGenerator(initialValue) {
-   let currentValue = initialValue;
-   while(true) {
-    let fromOuter = yield currentValue;
-    currentValue += fromOuter !== undefined ? fromOuter : 0;
-   }
+let email = new Set();
+
+email.add('ryahin@gmail.com');
+email.add('ryahinr.e.u@gmail.com');
+email.add('apellesodeskiy@gmail.com');
+email.add('ryahin@gmail.com');
+email.add('ryahina@gmail.com');
+email.add('ryahina2@gmail.com');
+
+// Проверка наличия одного из email
+
+console.log(email.has('ryahinr.e.u@gmail.com'))
+// Удаление одного из email
+email.delete('ryahina@gmail.com')
+// Вывод всех уникальных email адресов с использованием цикла for...of
+for (const userEmail of email) {
+    console.log(userEmail);
 }
-
-// Инициализируем генератор с начальным значением 10
-const generator = dynamicUpdateGenerator(10);
-
-// Демонстрация работы генератора
-console.log(generator.next().value);   // 10
-console.log(generator.next(5).value);  // 15 (10 + 5)
-console.log(generator.next(3).value);  // 18 (15 + 3)
-setTimeout(() => console.log(generator.next(-2).value), 1000); // 16 (18 - 2)
-console.log(generator.next(7).value);  // 23 (16 + 7)
+// Очистка Set, удаление всех email адресов
+email.clear();
+console.log(email.size);
