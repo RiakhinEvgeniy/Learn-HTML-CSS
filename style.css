@@ -1,9 +1,9 @@
-body.light {
-    background-color: white;
-    color: black;
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
 }
-
-body.dark {
-    background-color: black;
-    color: white;
+label, input, textarea, button {
+    margin-bottom: 10px;
 }

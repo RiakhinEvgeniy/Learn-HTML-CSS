@@ -1,21 +1,42 @@
-let saveButton = document.getElementById('saveButton');
-let userName = document.getElementById('username');
-let theme = document.getElementById('theme');
+let textInput = document.getElementById('name');
+let emailInput = document.getElementById('email');
+let messageInput = document.getElementById('message');
+let resetButton = document.getElementById('reset-btn');
 
-let savedUserName = localStorage.getItem('userName');
-if(savedUserName) {
-    userName.value = savedUserName;
+let nameSession = sessionStorage.getItem('name');
+if(nameSession) {
+    console.log(nameSession);
+    textInput.value = nameSession;
 }
 
-let savedTheme = localStorage.getItem('theme');
-if(savedTheme) {
-    theme.value = savedTheme;
-    document.body.className = savedTheme;
+let emailSession = sessionStorage.getItem('email');
+if(emailSession) {
+    console.log(emailSession);
+    emailInput.value = emailSession;
 }
 
-saveButton.addEventListener('click', () => {
-    let valueInput = userName.value;
-    let valueTheme = theme.value;
-    localStorage.setItem('userName', valueInput);
-    localStorage.setItem('theme', valueTheme);
-});
+let messageSession = sessionStorage.getItem('message');
+if(messageSession) {
+    console.log(messageSession);
+    messageInput.value = messageSession;
+}
+
+textInput.addEventListener('input', () => {
+    let textName = textInput.value;
+    sessionStorage.setItem('name', textName);
+})
+
+emailInput.addEventListener('input', () => {
+    let textEmail = emailInput.value;
+    sessionStorage.setItem('email', textEmail);
+})
+
+messageInput.addEventListener('input', () => {
+    let textMessage = messageInput.value;
+    sessionStorage.setItem('message', textMessage);
+})
+
+resetButton.addEventListener('click', () => {
+    document.getElementById('data-form').reset();
+    sessionStorage.clear();
+})
