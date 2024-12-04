@@ -1,42 +1,30 @@
-let textInput = document.getElementById('name');
-let emailInput = document.getElementById('email');
-let messageInput = document.getElementById('message');
-let resetButton = document.getElementById('reset-btn');
-
-let nameSession = sessionStorage.getItem('name');
-if(nameSession) {
-    console.log(nameSession);
-    textInput.value = nameSession;
+function saveValueInSessionStorage(event) {
+    let key = event.target.id;
+    let value = event.target.value;
+    console.log(key);
+    console.log(value);
+    sessionStorage.setItem(key, value);
 }
 
-let emailSession = sessionStorage.getItem('email');
-if(emailSession) {
-    console.log(emailSession);
-    emailInput.value = emailSession;
+function loadDataInTextForm() {
+    let name = sessionStorage.getItem('name');
+    let email = sessionStorage.getItem('email');
+    let message = sessionStorage.getItem('message');
+
+    if (name) document.getElementById('name').value = name;
+    if (email) document.getElementById('email').value = email;
+    if (message) document.getElementById('message').value = message;
 }
 
-let messageSession = sessionStorage.getItem('message');
-if(messageSession) {
-    console.log(messageSession);
-    messageInput.value = messageSession;
-}
-
-textInput.addEventListener('input', () => {
-    let textName = textInput.value;
-    sessionStorage.setItem('name', textName);
-})
-
-emailInput.addEventListener('input', () => {
-    let textEmail = emailInput.value;
-    sessionStorage.setItem('email', textEmail);
-})
-
-messageInput.addEventListener('input', () => {
-    let textMessage = messageInput.value;
-    sessionStorage.setItem('message', textMessage);
-})
-
-resetButton.addEventListener('click', () => {
+function resetForm() {
     document.getElementById('data-form').reset();
     sessionStorage.clear();
-})
+}
+
+document.getElementById('name').addEventListener('input', saveValueInSessionStorage);
+document.getElementById('email').addEventListener('input', saveValueInSessionStorage);
+document.getElementById('message').addEventListener('input', saveValueInSessionStorage);
+
+document.getElementById('reset-btn').addEventListener('click', resetForm);
+
+document.addEventListener('DOMContentLoaded', loadDataInTextForm);
