@@ -1,5 +1,4 @@
 //  document.cookie = "username=Evgeniy; expires=Thu, 05 Dec 2025 16:59:59 GMT";
-
 function setCookie(key, value, days) {
     let nameOfKey = key + '=';
     let expires = '';
@@ -22,14 +21,29 @@ function getCookie(key) {
     return null;
 }
 
-let inputKey = prompt('Enter key for cookies:');
-let inputValue = prompt('Enter name for cookies:');
-setCookie(inputKey, inputValue, 2);
+let sessionId = 'username';
+let value = 'Evgenii1980';
+
+function deleteCookie(name) {
+    document.cookie = name + '=; max-age=0; path=/';
+}
+
+let deleteButton = document.getElementById('deleteCookieButton');
+deleteButton.addEventListener('click', () => {
+    deleteCookie(sessionId);
+    location.reload();
+})
+
+let setButton = document.getElementById('getCookieButton');
+setButton.addEventListener('click', () => {
+    setCookie(sessionId, value, 7);
+    location.reload();
+})
 
 function displayNameCookie() {
-    let result = getCookie('username');
+    let result = getCookie(sessionId);
     if (result) {
-        alert(result);
+        console.log(result);
     }
 }
 
