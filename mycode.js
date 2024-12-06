@@ -1,30 +1,36 @@
-function saveValueInSessionStorage(event) {
-    let key = event.target.id;
-    let value = event.target.value;
-    console.log(key);
-    console.log(value);
-    sessionStorage.setItem(key, value);
+//  document.cookie = "username=Evgeniy; expires=Thu, 05 Dec 2025 16:59:59 GMT";
+
+function setCookie(key, value, days) {
+    let nameOfKey = key + '=';
+    let expires = '';
+    let dateForExpires = new Date();
+    dateForExpires.setTime(dateForExpires.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = '; expires=' + dateForExpires.toUTCString();
+    let cookieUpdate = nameOfKey + value + expires + '; path=/';
+    document.cookie = cookieUpdate;
 }
 
-function loadDataInTextForm() {
-    let name = sessionStorage.getItem('name');
-    let email = sessionStorage.getItem('email');
-    let message = sessionStorage.getItem('message');
-
-    if (name) document.getElementById('name').value = name;
-    if (email) document.getElementById('email').value = email;
-    if (message) document.getElementById('message').value = message;
+function getCookie(key) {
+    let userName = key + '=';
+    let cookies = document.cookie.split(`;`);
+    for (let i = 0; i < cookies.length; i++) {
+        let separateOfCookies = cookies[i].trim();
+        if (separateOfCookies.indexOf(userName) === 0) {
+            return separateOfCookies.substring(userName.length, separateOfCookies.length);
+        }
+    }
+    return null;
 }
 
-function resetForm() {
-    document.getElementById('data-form').reset();
-    sessionStorage.clear();
+let inputKey = prompt('Enter key for cookies:');
+let inputValue = prompt('Enter name for cookies:');
+setCookie(inputKey, inputValue, 2);
+
+function displayNameCookie() {
+    let result = getCookie('username');
+    if (result) {
+        alert(result);
+    }
 }
 
-document.getElementById('name').addEventListener('input', saveValueInSessionStorage);
-document.getElementById('email').addEventListener('input', saveValueInSessionStorage);
-document.getElementById('message').addEventListener('input', saveValueInSessionStorage);
-
-document.getElementById('reset-btn').addEventListener('click', resetForm);
-
-document.addEventListener('DOMContentLoaded', loadDataInTextForm);
+displayNameCookie();
