@@ -9,22 +9,7 @@
 </head>
 
 <body>
-    <script>
-        if ('geolocation' in navigator) {
-            navigator.geolocation.getCurrentPosition((pos) => {
-                console.log(`Latitude: ${pos.coords.latitude}`);
-                console.log(`Latitude: ${pos.coords.longitude}`);
-            },
-
-                (error) => {
-                    console.log('Error getting geolocation: ' + error);
-                }
-            );
-        }
-        else {
-            console.log('Unknown error!');
-        }
-    </script>
+    
     <script src="mycode.js"></script>
 </body>
 
